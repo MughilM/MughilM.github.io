@@ -1,7 +1,7 @@
 ---
 title: Data Science Projects
 layout: landing
-description: 'Current ongoing data science projects.'
+description: "Page currently in development. See https://github.com/MughilM/AcaDS, https://github.com/MughilM/Data-Science-Projects, and https://github.com/MughilM/Reinforce-Learn for a sampling of projects."
 image: assets/images/pic07.jpg
 nav-menu: true
 ---
