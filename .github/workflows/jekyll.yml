@@ -21,3 +21,4 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           jekyll_env: production
+          jekyll_src: ./
