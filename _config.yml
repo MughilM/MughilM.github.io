@@ -53,6 +53,10 @@ menu:
     url:               /blog/
   - title:             Projects
     url:               /projects/
+  - title:             Project Euler
+    url:               /blog/project-euler
+  - title:             5% Difficulty
+    url:               /blog/05-diff
   - title:             Résumé*
     url:               /resume/
   - title:             Documentation
@@ -294,7 +298,7 @@ collections:
     output:            true
 
   featured_tags:
-    permalink:         /tag-:name/
+    permalink:         /blog/tag-:name/
     output:            true
 
   projects:
