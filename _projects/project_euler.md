@@ -33,3 +33,24 @@ most cases the actual generation of primes is not the important concept needed t
 Project Euler also lists corresponding difficulty of each problem, ranging from 5% to 100%,
 in increments of 5. Below you can see all the posts that are demarcated by difficulty.
 For a full list of all problems, please use the link above this post's image.
+
+## Difficulty
+* [5%](/blog/tag-05-diff){:.heading.flip-title}
+* 10%
+* 15%
+* 20%
+* 25%
+* 30%
+* 35%
+* 40%
+* 45%
+* 50%
+* 55%
+* 60%
+* 70%
+* 75%
+* 80%
+* 85%
+* 90%
+* 95%
+* 100%

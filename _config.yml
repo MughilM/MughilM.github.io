@@ -55,8 +55,6 @@ menu:
     url:               /projects/
   - title:             Project Euler
     url:               /blog/project-euler
-  - title:             5% Difficulty
-    url:               /blog/05-diff
   - title:             Résumé*
     url:               /resume/
   - title:             Documentation
