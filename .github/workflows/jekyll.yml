@@ -7,7 +7,6 @@
 name: Deploy Jekyll site to Pages
 
 on:
-  # Runs on pushes targeting the default branch
   push:
     branches:
       - main
@@ -22,6 +21,7 @@ jobs:
   jekyll:
     runs-on: ubuntu-latest
     steps:
+      - run: "git config --global --add safe.directory /github/workspace"
       - uses: actions/checkout@v3
       - uses: actions/cache@v2
         with:
