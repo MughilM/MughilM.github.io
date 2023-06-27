@@ -1,0 +1,760 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" hreflang="en" /><updated>2023-06-27T03:46:57+00:00</updated><id>/feed.xml</id><title type="html">Mughil Pari</title><subtitle>Mughil's personal website, built with the Hydejack PRO Jekyll theme
+</subtitle><author><name>Mughil Pari</name><email>mughilan.muthupari@gmail.com</email></author><entry><title type="html">What’s New in Hydejack 9.1?</title><link href="/blog/example/2021-02-13-whats-new-in-hydejack-9-1/" rel="alternate" type="text/html" title="What’s New in Hydejack 9.1?" /><published>2021-02-13T00:00:00+00:00</published><updated>2023-06-27T03:45:28+00:00</updated><id>/blog/example/whats-new-in-hydejack-9-1</id><content type="html" xml:base="/blog/example/2021-02-13-whats-new-in-hydejack-9-1/"><![CDATA[<p>What’s New in Hydejack 9.1?</p>
+
+<ul id="markdown-toc">
+  <li><a href="#stripe-ified-design" id="markdown-toc-stripe-ified-design">Stripe-ified Design</a></li>
+  <li><a href="#inverted-sidebars" id="markdown-toc-inverted-sidebars">Inverted Sidebars</a></li>
+  <li><a href="#code-block-headers" id="markdown-toc-code-block-headers">Code Block Headers</a></li>
+  <li><a href="#resume-download-buttons" id="markdown-toc-resume-download-buttons">Resume Download Buttons</a></li>
+  <li><a href="#serp-breadcrumbs" id="markdown-toc-serp-breadcrumbs"><abbr title="Search Engine Results Page">SERP</abbr> Breadcrumbs</a></li>
+  <li><a href="#last-modified-at" id="markdown-toc-last-modified-at">Last Modified At</a></li>
+  <li><a href="#clap-button-preview" id="markdown-toc-clap-button-preview">Clap Button Preview</a></li>
+  <li><a href="#credits" id="markdown-toc-credits">Credits</a></li>
+</ul>
+
+<h2 id="stripe-ified-design">Stripe-ified Design</h2>
+<p>Most elements now have rounded borders, making the design look more modern (dare I say “Stripe-ified”) than ever before.</p>
+
+<p>The goal of Hydejack was always to provide a theme that looks “designed” combined the amenities of a typical Jekyll theme for coders.
+This is an important step in maintaining this goal.</p>
+
+<p>At the same time, I’m introducing nerdy elements like <a href="#serp-breadcrumbs">breadcrumbs</a>, that are almost ornamental in nature.
+You wouldn’t find these on other Stripe-like designs, but I think they are appealing to developer types like myself. 
+Like most additions to Hydejack, they can be disabled via configuration.</p>
+
+<h2 id="inverted-sidebars">Inverted Sidebars</h2>
+<p>The colors on the sidebar can now be inverted to allow brighter sidebar images. This can be enabled per-page in the fort matter:</p>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">invert_sidebar</span><span class="pi">:</span> <span class="kc">true</span>
+</code></pre></div></div>
+
+<h2 id="code-block-headers">Code Block Headers</h2>
+<p>Code blocks can now have headers:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// file: 'hello-world.js'</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Hello World!</span><span class="dl">'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>Headers are added by making the first line a comment of the form <code class="language-plaintext highlighter-rouge">(file|title): ['"].*['"]</code>, e.g.:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>~~~js
+// file: 'hello-world.js'
+console.log('Hello World!');
+~~~
+</code></pre></div></div>
+
+<p>Code blocks with and without headers now also come with a copy button. 
+In the case of header-less code blocks, the button only shows on hover to prevent potential overlap.</p>
+
+<h2 id="resume-download-buttons">Resume Download Buttons</h2>
+<p>Resumes can now have download buttons:</p>
+
+<p><img src="/assets/img/blog/9.1.0-3.png" alt="Download Buttons" class="border lead" width="1776" height="258" loading="lazy" /></p>
+
+<p class="figcaption">Resumes can now have download buttons.</p>
+
+<p>The documentation has been updated with a chapter on <a href="/docs/basics/#downloads">how to configure the buttons</a>.</p>
+
+<h2 id="serp-breadcrumbs"><abbr title="Search Engine Results Page">SERP</abbr> Breadcrumbs</h2>
+<p>Added breadcrumbs above page title:</p>
+
+<p><img src="/assets/img/blog/9.1.0-2.png" alt="Breadcrumbs" class="border lead" width="1588" height="164" loading="lazy" /></p>
+
+<p class="figcaption">Bread crumbs are now shown above each page title.</p>
+
+<p>Note that this requires a <a href="https://qwtel.com/posts/software/urls-are-directories/">directory-like URL structure</a> on your entire site, 
+otherwise the intermediate links will point to nonexisting sites.</p>
+
+<p>On a side note, Hydejack now has built-in tooltips for abbreviations like <abbr title="Search Engine Results Page">SERP</abbr> (activated via tap/click).
+See <a href="/blog/hyde/2012-02-07-example-content/#inline-html-elements">Example Content</a> on how to add them to your content.</p>
+
+<h2 id="last-modified-at">Last Modified At</h2>
+<p>Blog posts can now have a “last modified at” date in the sub title row.</p>
+
+<p><img src="/assets/img/blog/9.1.0-1.png" alt="Last modified at" class="border lead" width="1254" height="218" loading="lazy" /></p>
+
+<p>Note that this depends on the <code class="language-plaintext highlighter-rouge">last_modified_at</code> property of the page, which must be either set manually in the frontmatter (not recommended), or via a plugin like <a href="https://github.com/gjtorikian/jekyll-last-modified-at"><code class="language-plaintext highlighter-rouge">jekyll-last-modified-at</code></a>. Note that the later is not available when building on GitHub Pages and can increase build times.</p>
+
+<h2 id="clap-button-preview">Clap Button Preview</h2>
+<p>I’ve been trying something new with <a href="https://getclaps.app/"><strong>getclaps.app</strong></a>, a feedback and analytics tool for personal sites like those powered by Hydejack.</p>
+
+<!-- <clap-button style="--clap-button-color:var(--body-color);margin:2rem auto 3rem;width:3rem;height:3rem;font-size:smaller" nowave></clap-button> -->
+
+<p>It is a separate product from Hydejack and not enabled by default. Because it depends on a backend component, it requires a monthly fee. 
+If enabled, it is placed below posts and pages where the dingbat character (❖) used to be.</p>
+
+<p>I can’t claim that this product is fully baked (feedback welcome), but I’ve been using it on my personal site and here for the last couple of months with no issues.
+For more, see <a href="https://getclaps.app/">the dedicated website</a>.</p>
+
+<hr style="margin:2rem 0" />
+
+<p>There are many more changes and bugfixes in 9.1. See the <a href="/CHANGELOG/" class="heading flip-title">CHANGELOG</a> for details.</p>
+
+<h2 id="credits">Credits</h2>
+
+<p><span>Photo by <a href="https://unsplash.com/@jjying?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">JJ Ying</a> on <a href="https://unsplash.com/?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span></p>]]></content><author><name>Mughil Pari</name><email>mughilan.muthupari@gmail.com</email></author><category term="example" /><summary type="html"><![CDATA[Version 9.1 provides minor design changes, new features, and closes multiple issues.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="/assets/img/blog/jj-ying.jpg" /><media:content medium="image" url="/assets/img/blog/jj-ying.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Introducing Hydejack 9</title><link href="/blog/example/2020-07-03-introducing-hydejack-9/" rel="alternate" type="text/html" title="Introducing Hydejack 9" /><published>2020-07-03T00:00:00+00:00</published><updated>2023-06-27T03:45:28+00:00</updated><id>/blog/example/introducing-hydejack-9</id><content type="html" xml:base="/blog/example/2020-07-03-introducing-hydejack-9/"><![CDATA[<p class="lead">Version 9 is the most complete version of Hydejack yet.</p>
+
+<p><a href="#linking-in-style">Modernized</a> <a href="#whats-in-the-cards">design</a>, <a href="#ready-for-the-big-screen">big headlines</a>, big new features: <a href="#built-in-search">Built-In Search</a>, <a href="#sticky-table-of-contents">Sticky Table of Contents</a>, and <a href="#auto-hiding-navbar">Auto-Hiding Navbar</a>. That <a href="#and-much-more">and more</a> is Hydejack 9.</p>
+
+<ul class="large-only" id="markdown-toc">
+  <li><a href="#linking-in-style" id="markdown-toc-linking-in-style">Linking in Style</a></li>
+  <li><a href="#ready-for-the-big-screen" id="markdown-toc-ready-for-the-big-screen">Ready for the Big Screen</a></li>
+  <li><a href="#whats-in-the-cards" id="markdown-toc-whats-in-the-cards">What’s in the Cards?</a></li>
+  <li><a href="#built-in-search" id="markdown-toc-built-in-search">Built-In Search</a></li>
+  <li><a href="#auto-hiding-navbar" id="markdown-toc-auto-hiding-navbar">Auto-Hiding Navbar</a></li>
+  <li><a href="#sticky-table-of-contents" id="markdown-toc-sticky-table-of-contents">Sticky Table of Contents</a></li>
+  <li><a href="#and-much-more" id="markdown-toc-and-much-more">…and much more</a></li>
+  <li><a href="#even-more-to-come" id="markdown-toc-even-more-to-come">Even More to Come</a></li>
+  <li><a href="#get-it-now" id="markdown-toc-get-it-now">Get It Now</a></li>
+</ul>
+
+<h2 id="linking-in-style">Linking in Style</h2>
+
+<p>Ever since the introduction of Dark Mode, link styles have been a bit of an issue. Specifically, finding an accent color that worked on both light and dark backgrounds was the problem. With Hydejack 9, the <a href="#linking-in-style">link style</a> has been revamped so that legibility is no longer tied to the choice of accent_color, giving you much more freedom in creating a unique design flavor for your site.</p>
+
+<h2 id="ready-for-the-big-screen">Ready for the Big Screen</h2>
+
+<p>The theme on which Hydejack is based was designed for a different era of the web. Hydejack has inherited many of its limitations, but over time I’ve made adjustments, such as centering the content column for better reading ergonomics.</p>
+
+<p>With version 9, Hydejack takes full advantage of large displays. Whether it’s design indulgences such as oversized headlines, or quality of life improvements such as a floating table of contents, Hydejack now finds use for all that extra screen real estate<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>.</p>
+
+<h2 id="whats-in-the-cards">What’s in the Cards?</h2>
+
+<p>Hydejack 9 now lets you use content cards for both projects and posts. 
+The cards have been redesigned with a new hover style and drop shadows and they retain their unique transition-to-next-page animations, which now also work on the <code class="language-plaintext highlighter-rouge">blog</code> layout. The new <code class="language-plaintext highlighter-rouge">grid</code> layout lets you do that.</p>
+
+<p>Good images are key to making the most out of content cards. For that reason, a <a href="/docs/basics/#adding-images">chapter on images</a> has been added to the documentation.</p>
+
+<h2 id="built-in-search">Built-In Search</h2>
+
+<p>Hydejack now has Built-In Search. It even works offline. I’ve been prototyping many approaches and eventually settled on a fully client-side, off-the-main thread solution that perfectly fits the use case of personal sites and shows surprisingly good results<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup>.</p>
+
+<p>The new search UI is custom made for Hydejack and shows beautiful previews of your posts and pages, right on top of your regular content.</p>
+
+<p>Together with the Auto-Hiding Navbar, your entire content library is now only a couple of keystrokes away.</p>
+
+<h2 id="auto-hiding-navbar">Auto-Hiding Navbar</h2>
+
+<p>A navbar that’s there when you need it, and disappears when you don’t. Simple as that.</p>
+
+<h2 id="sticky-table-of-contents">Sticky Table of Contents</h2>
+
+<p>Already a staple on so many sites on the web, this pattern is now also available in Hydejack. 
+What’s unique about it is that it simply picks up the table of contents already created by kramdown’s <code class="language-plaintext highlighter-rouge">{:toc}</code> tag and transparently upgrades it to a fully dynamic version.</p>
+
+<h2 id="and-much-more">…and much more</h2>
+
+<p>Other noteworthy changes include:</p>
+<ul>
+  <li>Support for Jekyll 4</li>
+  <li>Choice between MathJax and KaTeX for math rendering</li>
+  <li>Use of <code class="language-plaintext highlighter-rouge">jekyll-include-cache</code> for drastically improved page building speeds</li>
+  <li>New variables configuration file — adjust content width, sidebar width, font size, etc…</li>
+  <li>…and the option to disable grouping projects by year.</li>
+</ul>
+
+<p>Read the the <a href="/CHANGELOG/" class="heading flip-title">CHANGELOG</a> for the full scope of features and improvements made in Hydejack 9.
+Maybe just glance at it to confirm that it is indeed a pretty long list.</p>
+
+<h2 id="even-more-to-come">Even More to Come</h2>
+
+<p>New features for 9.1 are already lined up. Code block headers and code line highlights for even better technical blogging, as well as download buttons on the resume page for PDF, vCard, and Resume JSON are just around the corner.</p>
+
+<h2 id="get-it-now">Get It Now</h2>
+<p>The Free Version of Hydejack is now availabe on <a href="https://rubygems.org/gems/jekyll-theme-hydejack">RubyGems</a>
+and for the first time also on <a href="https://github.com/hydecorp/hydejack/packages">GitHub Packages</a>. 
+The source code is available on <a href="https://github.com/hydecorp/hydejack">GitHub</a> as always.</p>
+
+<p>The PRO Version is scheduled to release on July 7th on Gumroad. Pre-Orders are open now:</p>
+
+<div class="gumroad-product-embed" data-gumroad-product-id="nuOluY"><a href="https://gumroad.com/l/nuOluY">Loading…</a></div>
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p>If you are a fan of the old two-column layout, or don’t like modern design tropes such as mega headlines, Hydejack lets you revert these changes on a case-by-case basis via configuration options. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:2" role="doc-endnote">
+
+      <p>Search was mainly tested for English and German. Please let me know about issues in other languages. 
+  While I’ve tried to find a multi-language solution, most showed drastically worse  results for the English base case.
+  If you’re technically inclined, you can adopt the code located in <code class="language-plaintext highlighter-rouge">_includes/js/search-worker.js</code> to your needs. <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>]]></content><author><name>Mughil Pari</name><email>mughilan.muthupari@gmail.com</email></author><category term="example" /><summary type="html"><![CDATA[Version 9 is the most complete version of Hydejack yet. Modernized design, big headlines, and big new features.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="/assets/img/blog/jeremy-bishop@0,5x.jpg" /><media:content medium="image" url="/assets/img/blog/jeremy-bishop@0,5x.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">#176 - Right-angled triangles that share a cathetus</title><link href="/blog/project_euler/2020-05-31-176-Right-angled-triangles-cathetus/" rel="alternate" type="text/html" title="#176 - Right-angled triangles that share a cathetus" /><published>2020-05-31T19:59:00+00:00</published><updated>2023-06-27T03:45:28+00:00</updated><id>/blog/project_euler/176---Right-angled-triangles-cathetus</id><content type="html" xml:base="/blog/project_euler/2020-05-31-176-Right-angled-triangles-cathetus/"><![CDATA[<blockquote class="lead">
+  <p>The four right-angled triangles with sides (9, 12, 15), (12, 16, 20), (5, 12, 13) and (12, 35, 37) all have one of the shorter sides (catheti) equal to 12. It can be shown that no other integer sided right-angled triangle exists with one of the catheti equal to 12.</p>
+
+  <p>Find the smallest integer that can be the length of a cathetus of exactly 47547 different integer sided right-angled triangles.</p>
+</blockquote>
+<hr />
+
+<p>On the Wolfram Mathworld page for <a href="https://mathworld.wolfram.com/PythagoreanTriple.html">Pythagorean Triples</a>, we find the following formula for the number of triangles with leg length $s$.</p>
+
+\[L(s) = \begin{cases}
+    \frac{1}{2}[(2a_1+1)(2a_2+1)\cdots(2a_n+1)-1] \qquad &amp;\text{for }a_0=0
+    \\
+    \frac{1}{2}[(2a_0-1)(2a_1+1)(2a_2+1)\cdots(2a_n+1)-1] \qquad &amp;\text{for }a_0\geq 1
+\end{cases}\]
+
+<p>where $s=2^{a_0}p_1^{a_1}\cdots p_n^{a_n}$.</p>
+
+<p>We can verify this using the example given in the problem. $s=12=2^2\times 3$. Therefore, since $a_0=2\geq 1$, we use the second case, and $L(12) = \frac{1}{2}[(2(2)-1)(2(1)+1)-1] = \frac{1}{2}(3(3)-1) = 4$.</p>
+
+<p>But we’re not asked to find $L(s)$. Instead, we are given what $L(s)$ is, and asked to find the minimum value of $s$. We want $L^{-1}(s)$.</p>
+
+<p>The first thing we do is adjust the formula to accommodate the inverse. Assuming $s$ is broken down into its prime factorization, we multiply by 2 and 1 to $L(s)$, and keep the product on the other side. Because we want the <strong>smallest</strong> $s$, we want $s$ to have powers of 2, and not potentially anything larger. (12 has a power 12, 15 does not, but both evaluate to 4 triangles).</p>
+
+\[(2a_0-1)(2a_1+1)(2a_2+1)\cdots(2a_n+1)=2L(s)+1\]
+
+<p>On the left, we are multiplying numbers together, so maybe if we find the prime factorization of $\mathbf{2L(s)+1}$, we can be a step closer to the answer.</p>
+
+<p>The factorization of $2(47547)+1=95095$ is $5\times 7\times 11\times 13\times 19$. We have 5 factors, which can be split among 5 factors above (corresponding to $a_0,a_1,\dots,a_4$). But which factor corresponds to which $a_i$? Remember $a_i$ corresponds to the exponent in the original factorization of $s$. In order to achieve the smallest product possible, we want the <strong>largest exponents on the smallest prime factors</strong> (and vice versa). Therefore, we want</p>
+
+\[\begin{cases}
+    2a_0-1 &amp;= 19
+    \\
+    2a_1+1 &amp;= 13
+    \\
+    2a_2+1 &amp;= 11
+    \\
+    2a_3+1 &amp;= 7
+    \\
+    2a_4+1 &amp;= 5
+\end{cases}\]
+
+<p>These are simple equations, and the exponents for $s$ are then ${a_0,a_1,a_2,a_3,a_4}={10,6,5,3,2}$. Thus, the smallest $s$ which makes $L(s)=47547$ is</p>
+
+\[s=2^{10}\times 3^6\times 5^5\times 7^3\times 11^2 = \boxed{96818198400000}\]
+
+<p>Our large answer is <strong>96818198400000</strong>. No code necessary for this problem :). This worked because the factorization of $2L(s)+1$ had 5 clean factors we could evenly distribute. If the factorization were more complicated, we would have to check additional cases.</p>]]></content><author><name>Mughil Pari</name><email>mughilan.muthupari@gmail.com</email></author><category term="project_euler" /><category term="70_diff" /><summary type="html"><![CDATA[The four right-angled triangles with sides (9, 12, 15), (12, 16, 20), (5, 12, 13) and (12, 35, 37) all have one of the shorter sides (catheti) equal to 12. It can be shown that no other integer sided right-angled triangle exists with one of the catheti equal to 12. Find the smallest integer that can be the length of a cathetus of exactly 47547 different integer sided right-angled triangles.]]></summary></entry><entry><title type="html">#138 - Special isosceles triangles</title><link href="/blog/project_euler/2020-04-05-138-Special-isosceles-triangles/" rel="alternate" type="text/html" title="#138 - Special isosceles triangles" /><published>2020-04-05T09:15:00+00:00</published><updated>2023-06-27T03:45:28+00:00</updated><id>/blog/project_euler/138---Special-isosceles-triangles</id><content type="html" xml:base="/blog/project_euler/2020-04-05-138-Special-isosceles-triangles/"><![CDATA[<blockquote class="lead">
+  <p>Consider the isosceles triangle with base length, $b=16$, and legs, $L=17$.</p>
+
+  <p><img src="/assets/img/project_euler/p138.png" alt="p138" style="display:block; margin-left:auto; margin-right:auto" /></p>
+
+  <p>By using the Pythagorean theorem it can be seen that the height of the triangle, $h=\sqrt{17^2-8^2}=15$, which is one less than the base length.</p>
+
+  <p>With $b=272$ and $L=305$, we get $h=273$, which is one more than the base length, and this is the second smallest isosceles triangle with the property that $h=b\pm1$.</p>
+
+  <p>Find $\sum L$ for the twelve smallest isosceles triangles for which $h=b\pm1$ and $b,L$ are positive integers.</p>
+</blockquote>
+<hr />
+
+<p>Whenever you drop the height of an isosceles triangle down to the base, it cuts the base in two and produces two right triangles, whose leg lengths are $b/2$ and $h$, with hypotenuse $L$. Since we want $h=b\pm1$, then $b/2&lt;h$.</p>
+
+<p>Let’s say that $\alpha=h$, $\beta=b/2$, and $\gamma=L$. To have our original property hold, we need to find Pythagorean triples such that $2\beta=\alpha\pm1$. Additionally, this also means the triples have to be <strong>primitive</strong>, because if they weren’t, the difference would be greater than 1. We can use the <a href="https://en.wikipedia.org/wiki/Tree_of_primitive_Pythagorean_triples">Pythaogrean tree</a> as we did in previous problems.</p>
+
+<p>Looking at the tree, the two solutions given in the problem correspond to the (15, 8, 17) and (273, 136, 305) triangles. It seems we multiplied by $C$ for the first triple, then multiplied by $B$ then $C$ to get the second one. Does this pattern hold? If we multiply by $CB$ on the left again, let’s see if we get another solution.</p>
+
+\[(CB)^2C\overrightarrow{v} =
+ \begin{bmatrix}
+ -545 &amp; 610 &amp; 818 \\
+ -274 &amp; 305 &amp; 410 \\
+ -610 &amp; 682 &amp; 915
+ \end{bmatrix}
+ \begin{bmatrix}
+ 3 \\ 4 \\ 5
+ \end{bmatrix}
+= \begin{bmatrix}
+ 4895 \\ 2448 \\ 5473
+\end{bmatrix}\]
+
+<p>Indeed, we have 2(2448) = 4896, which is one more than 4895. To prove this pattern works, one would need to go through the multiplication with a generic triple $(\alpha, \beta, \gamma)$ and show that the rule holds with $CB$ and not with any other pair.</p>
+
+<p>The only code is to define the matrics and multiply them together, which is quick and easy with <code class="language-plaintext highlighter-rouge">numpy</code>.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># file: "problem138.py"
+</span><span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">array</span><span class="p">([</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">object</span><span class="p">)</span>
+<span class="n">C</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">array</span><span class="p">([</span>
+    <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+    <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+    <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">object</span><span class="p">)</span>
+
+<span class="n">baseTriple</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">array</span><span class="p">([</span><span class="mi">15</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">17</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">object</span><span class="p">)</span>
+<span class="n">CBprod</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">dot</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">B</span><span class="p">)</span>
+<span class="n">sumL</span> <span class="o">=</span> <span class="mi">17</span>
+<span class="n">limit</span> <span class="o">=</span> <span class="mi">12</span>
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="n">limit</span> <span class="o">-</span> <span class="mi">2</span><span class="p">):</span>
+    <span class="n">CBprod</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">dot</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="nf">dot</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">B</span><span class="p">),</span> <span class="n">CBprod</span><span class="p">)</span>
+    <span class="n">triple</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">dot</span><span class="p">(</span><span class="n">CBprod</span><span class="p">,</span> <span class="n">baseTriple</span><span class="p">)</span>
+    <span class="n">sumL</span> <span class="o">+=</span> <span class="n">triple</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">sumL</span><span class="p">)</span>
+</code></pre></div></div>
+<p>Running this short loop, we get</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1118049290473627
+0.00019860000000002098 seconds.
+</code></pre></div></div>
+<p>Thus, the sum of all hypotenuses is <strong>1118049290473627</strong>.</p>]]></content><author><name>Mughil Pari</name><email>mughilan.muthupari@gmail.com</email></author><category term="project_euler" /><category term="45_diff" /><summary type="html"><![CDATA[Consider the isosceles triangle with base length, $b=16$, and legs, $L=17$. By using the Pythagorean theorem it can be seen that the height of the triangle, $h=\sqrt{17^2-8^2}=15$, which is one less than the base length. With $b=272$ and $L=305$, we get $h=273$, which is one more than the base length, and this is the second smallest isosceles triangle with the property that $h=b\pm1$. Find $\sum L$ for the twelve smallest isosceles triangles for which $h=b\pm1$ and $b,L$ are positive integers.]]></summary></entry><entry><title type="html">#187 - Semiprimes</title><link href="/blog/project_euler/2020-01-02-187-Semiprimes/" rel="alternate" type="text/html" title="#187 - Semiprimes" /><published>2020-01-02T14:05:00+00:00</published><updated>2023-06-27T03:45:28+00:00</updated><id>/blog/project_euler/187---Semiprimes</id><content type="html" xml:base="/blog/project_euler/2020-01-02-187-Semiprimes/"><![CDATA[<blockquote class="lead">
+  <p>A composite is a number containing at least two prime factors. For example, $15=3\times5$; $9=3\times 3$; $12=2\times 2\times 3$.</p>
+
+  <p>There are ten composites below thirty containing precisely two, not necessarily distinct, prime factors: 4, 6, 9, 10, 14, 15, 21, 22, 25, 26.</p>
+
+  <p>How many composite integers, $n&lt;10^8$, have precisely two, not necessarily distinct, prime factors?</p>
+</blockquote>
+<hr />
+
+<p>Since we are only concerned about numbers with two factors, the larger of the two must not be more than half the limit. We can solve this with a double for loop if we have a prime flag array. The maximum value of the smaller prime can’t exceed the square root of the limit. Once we have this factor, we count all primes that are larger than this prime and add it to a running total. By enforcing the smaller factor, it avoids double counting $2\times 3$ and $3\times 2$ twice. I use <code class="language-plaintext highlighter-rouge">primesieve.numpy as pnp</code> so I can easily flag the primes.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># file: "problem187.py"
+</span><span class="n">limit</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">**</span> <span class="mi">8</span>
+<span class="c1"># Only need primes halfway
+</span><span class="n">primes</span> <span class="o">=</span> <span class="n">pnp</span><span class="p">.</span><span class="nf">primes</span><span class="p">(</span><span class="n">limit</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+<span class="c1"># Take as little space as possible with
+# np.uint8
+</span><span class="n">primeFlags</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">zeros</span><span class="p">(</span><span class="n">limit</span> <span class="o">//</span> <span class="mi">2</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="p">.</span><span class="n">uint8</span><span class="p">)</span>
+<span class="n">primeFlags</span><span class="p">[</span><span class="n">primes</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">del</span> <span class="n">primes</span>  <span class="c1"># Get rid of it, we don't need it anymore!
+</span>
+<span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="c1"># The smaller of the two can't exceed the 
+# square root of the limit...
+</span><span class="k">while</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">limit</span> <span class="o">**</span> <span class="mf">0.5</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">primeFlags</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+        <span class="c1"># Count primes up till limit // i to ensure
+</span>        <span class="c1"># the resulting number does not exceed
+</span>        <span class="c1"># the limit.
+</span>        <span class="n">total</span> <span class="o">+=</span> <span class="n">np</span><span class="p">.</span><span class="nf">sum</span><span class="p">(</span><span class="n">primeFlags</span><span class="p">[</span><span class="n">i</span><span class="p">:</span> <span class="n">limit</span> <span class="o">//</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">])</span>
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">total</span><span class="p">)</span>
+</code></pre></div></div>
+<p>Running this short loop, we get</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>17427258
+0.22744560000000003 seconds.
+</code></pre></div></div>
+<p>Thus, there are <strong>17427258</strong> composite integers below $10^8$ with exactly two prime factors.</p>]]></content><author><name>Mughil Pari</name><email>mughilan.muthupari@gmail.com</email></author><category term="project_euler" /><category term="25_diff" /><summary type="html"><![CDATA[A composite is a number containing at least two prime factors. For example, $15=3\times5$; $9=3\times 3$; $12=2\times 2\times 3$. There are ten composites below thirty containing precisely two, not necessarily distinct, prime factors: 4, 6, 9, 10, 14, 15, 21, 22, 25, 26. How many composite integers, $n&lt;10^8$, have precisely two, not necessarily distinct, prime factors?]]></summary></entry><entry><title type="html">#173 - Using up to one million tiles how many different ‘hollow’ square laminae can be formed?</title><link href="/blog/project_euler/2020-01-02-173-Hollow-square-laminae/" rel="alternate" type="text/html" title="#173 - Using up to one million tiles how many different ‘hollow’ square laminae can be formed?" /><published>2020-01-02T12:47:00+00:00</published><updated>2023-06-27T03:45:28+00:00</updated><id>/blog/project_euler/173---Hollow-square-laminae</id><content type="html" xml:base="/blog/project_euler/2020-01-02-173-Hollow-square-laminae/"><![CDATA[<blockquote class="lead">
+  <p>We shall define a square lamina to be a square outline with a square “hole” so that the shape possesses vertical and horizontal symmetry. For example,  using exactly thiry-two square tiles we can form two different square lamina.</p>
+
+  <p><img src="/assets/img/project_euler/p173_square_laminas.gif" alt="lamina" style="display:block; margin-left:auto; margin-right:auto" /></p>
+
+  <p>With one-hundred tiles, and not necessarily using all of the tiles at one time, it is possible to form forty-one different square laminae.</p>
+
+  <p>Using up to one million tiles how many different square laminae can be formed?</p>
+</blockquote>
+<hr />
+
+<p>To count the different ways, we can keep the <strong>distance between the hole and the larger side</strong> constant, and count how many laminae can be made with that distance. In the first square in the example, the distance between the hole and the side is 2, while in the 2nd square, the distance is 1.</p>
+
+<p>If we keep the distance constant, we will vary the size of the hole. Given the hole side length $s_h$ and the distance to the side as $k$, the number of tiles needed is difference in areas. The hole area is $s_h^2$, while the area of the larger square is $(s_h+2k)^2$.</p>
+
+\[(s_h+2k)^2-s_h^2=s_h^2+4ks_h+4k^2-s_h^2 = 4k(s_h+k)\]
+
+<p>Since we are keeping $k$ constant, we want to see what the maximum hole size would be. If we are allowed a max of $T$ tiles, then the maximum hole size is</p>
+
+\[\begin{aligned}
+	4k(s_h+k) &amp;\leq T
+	\\
+	s_h+k &amp;\leq \frac{T}{4k}
+	\\
+	s_h &amp;\leq \frac{T}{4k}-k
+\end{aligned}\]
+
+<p>Therefore, for each distance $k$, the total number of tilings with that distance is $\lfloor \frac{T}{4k}-k \rfloor$. The maximum <strong>distance</strong> we can have will occur when the hole size is 1. So we set $s_h=1$ and solve for $k$:</p>
+
+\[\begin{aligned}
+	&amp;1 \leq \frac{T}{4k}-k
+	\\
+	4k^2+4k-T \leq\, &amp;0
+	\\
+	\frac{-4-\sqrt{16-4(4)(-T)}}{8} \leq\, &amp;k \leq \frac{-4+\sqrt{16-4(4)(-T)}}{8}
+	\\
+	-\frac{\sqrt{T+1}+1}{2} \leq\, &amp;k \leq \frac{\sqrt{T+1}-1}{2}
+\end{aligned}\]
+
+<p>The left side is negative, so we take the right side. We know have all the pieces required to calculate the number we want.</p>
+
+<p>We simply write a loop from $k=1$ up to $\frac{\sqrt{T+1}-1}{2}$ and add the number of tilings with that distance.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># file: "problem173.py"
+</span><span class="n">T</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">**</span> <span class="mi">6</span>
+<span class="c1"># Maximum distance between
+# inner hole and edge
+</span><span class="n">maxK</span> <span class="o">=</span> <span class="nf">int</span><span class="p">(((</span><span class="mi">1</span> <span class="o">+</span> <span class="n">T</span><span class="p">)</span> <span class="o">**</span> <span class="mf">0.5</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+<span class="c1"># For each inner distance, find
+# number of tilings possible,
+# with number of tiles &lt;= 100
+</span><span class="n">numOfTilings</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">maxK</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="c1"># The number of tilings with this distance k...
+</span>    <span class="n">numOfTilings</span> <span class="o">+=</span> <span class="nf">int</span><span class="p">(</span><span class="n">T</span> <span class="o">/</span> <span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="n">k</span><span class="p">)</span> <span class="o">-</span> <span class="n">k</span><span class="p">)</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="n">numOfTilings</span><span class="p">)</span>
+</code></pre></div></div>
+<p>Or, if you prefer a one-liner:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># file: "problem173.py"
+</span><span class="n">T</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">**</span> <span class="mi">6</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">sum</span><span class="p">(</span><span class="nf">int</span><span class="p">(</span><span class="n">T</span> <span class="o">/</span> <span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="n">k</span><span class="p">)</span> <span class="o">-</span> <span class="n">k</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nf">int</span><span class="p">(((</span><span class="mi">1</span> <span class="o">+</span> <span class="n">T</span><span class="p">)</span> <span class="o">**</span> <span class="mf">0.5</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)))</span>
+</code></pre></div></div>
+<p>Running the one-liner code, we have</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1572729
+0.00018640000000003099 seconds.
+</code></pre></div></div>
+<p>Therefore, the number of ways is <strong>1572729</strong>.</p>]]></content><author><name>Mughil Pari</name><email>mughilan.muthupari@gmail.com</email></author><category term="project_euler" /><category term="30_diff" /><summary type="html"><![CDATA[We shall define a square lamina to be a square outline with a square “hole” so that the shape possesses vertical and horizontal symmetry. For example, using exactly thiry-two square tiles we can form two different square lamina. With one-hundred tiles, and not necessarily using all of the tiles at one time, it is possible to form forty-one different square laminae. Using up to one million tiles how many different square laminae can be formed?]]></summary></entry><entry><title type="html">#162 - Hexadecimal numbers</title><link href="/blog/project_euler/2019-08-23-162-Hexadecimal-numbers/" rel="alternate" type="text/html" title="#162 - Hexadecimal numbers" /><published>2019-08-23T15:58:00+00:00</published><updated>2023-06-27T03:45:28+00:00</updated><id>/blog/project_euler/162---Hexadecimal-numbers</id><content type="html" xml:base="/blog/project_euler/2019-08-23-162-Hexadecimal-numbers/"><![CDATA[<blockquote class="lead">
+  <p>In the hexadecimal number system numbers are represented using 16 different digits:</p>
+
+\[0,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F\]
+
+  <p>The hexadecimal number AF when written in the decimal number system equals $10\times 16+15=175$.</p>
+
+  <p>In the 3-digit hexadecimal numbers 10A, 1A0, A10, and A01 the digits 0, 1, and A are all present. Like numbers written in base ten we write hexadecimal numbers without leading zeroes.</p>
+
+  <p>How many decimal numbers containing at most sixteen hexadecimal digits exist with all of the digits 0, 1, and A present at least once? Give your answer as a hexadecimal number.</p>
+
+  <p>(A,B,C,D,E and F in upper case, without any leading or trailing code that marks the number as hexadecimal and without leading zeroes, e.g. 1A3F and not: 1a3f and not 0x1a3f and not $1A3F and not #1A3F and not 0000001A3F)</p>
+</blockquote>
+<hr />
+
+<p>In this case, we will count the complement as that is a smaller set. Then we will subtract it from the whole set of numbers. The complement is “hexadecimal numbers that are <em>missing</em> at least one of 0, 1, or A.”</p>
+
+<p>With $n$ digits (none starting with 0), we can choose any of the 15 non-zero numbers for the first digit, and then anythnig for the rest of the $n-1$ digits. Thus, in total there are $15\times 16^{n-1}$ $n$-digit hexadecimal numbers. From this, we <strong>subtract</strong> the number of hexadecimal numbers that are missing 0, 1, or A.</p>
+
+<ul>
+  <li>Missing 0: With 0 removed, we have 15 choices for each digit, in total there are $15^n$.</li>
+  <li>Missing 1: We have 15 choices, but only 14 for the first digit (0 is still there), so in total $14\times 15^{n-1}$.</li>
+  <li>Missing A: Same as the above case, $14\times 15^{n-1}$.</li>
+</ul>
+
+<p>So in total, there are $15^n+2\times 14\times 15^{n-1}$. However, we double-counted instances where the number is missing two of the above digits (“BA3” for example, is missing both 0 and 1). We <strong>add</strong> back in all numbers that have two of the above missing.</p>
+<ul>
+  <li>Missing 0 and 1: There are 14 choices for each digit, so in total $14^n$.</li>
+  <li>Missing 0 and A: Same as above case, $14^n$.</li>
+  <li>Missing 1 and A: We have 13 choices for the first digit (0 is still there) and 14 for the rest, in total $13\times 14^{n-1}$.</li>
+</ul>
+
+<p>The total we add back is then $2\times 14^n + 13\times 14^{n-1}$. However, we double-counted again, this time we added back in numbers that are missing all three. We need to subtract these off. The number of hexadecimal numbers that are missing all three is just $13^n$, as we have 13 choices for each digit.</p>
+
+<p>In total, the number of $n$-digit numbers that have at least one 0, one 1, and one A is</p>
+
+\[\begin{aligned}
+	c(n) &amp;= 
+		\underbrace{15\times16^{n-1}}_\text{all numbers} -
+		\underbrace{\left( 15^n+2\times14\times15^{n-1} \right)}_\text{missing one of 0, 1, A} + 
+		\underbrace{\left( 2\times14^n+13\times14^{n-1} \right)}_\text{missing two of 0, 1, A} - 
+		\underbrace{13^n}_\text{missing all 3}
+	\\ &amp;=
+	15\times 16^{n-1} - 15^{n-1}(15+28) + 14^{n-1}(28+13)-13^n
+	\\ &amp;=
+	\boxed{15\times 16^{n-1} - 43\times15^{n-1} + 41\times 14^{n-1} - 13^n}
+\end{aligned}\]
+
+<p>Since we have an expression for $c(n)$, all we have to do is sum the values up to $n=16$. The <code class="language-plaintext highlighter-rouge">hex()</code> function converts the final number to hexadecimal. It contains “0x” at the beginning so we index this out, and we can call <code class="language-plaintext highlighter-rouge">.upper()</code> to make all the letters uppercase.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># file: "problem162.py"
+</span><span class="n">countNums</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">n</span><span class="p">:</span> <span class="mi">15</span> <span class="o">*</span> <span class="mi">16</span> <span class="o">**</span> <span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="mi">43</span> <span class="o">*</span> <span class="mi">15</span> <span class="o">**</span> <span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="mi">41</span> <span class="o">*</span> <span class="mi">14</span> <span class="o">**</span> <span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="mi">13</span> <span class="o">**</span> <span class="n">n</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">hex</span><span class="p">(</span><span class="nf">sum</span><span class="p">(</span><span class="nf">countNums</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">17</span><span class="p">)))[</span><span class="mi">2</span><span class="p">:].</span><span class="nf">upper</span><span class="p">())</span>
+</code></pre></div></div>
+<p>Running this very short program, we have</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>3D58725572C62302
+4.590000000004313e-05 seconds.
+</code></pre></div></div>
+<p>Therefore, our answer for the total hexadecimal numbers up to 16 digits is <strong>3D58725572C62302</strong>.</p>
+<h2 id="bonus">Bonus</h2>
+<p>We can actually find a closed-form solution for the sum. We will use the fact that $\sum_{n=1}^N a^n = \frac{a^{N+1}-1}{a-1}-1$. Because $c(1)=c(2)=0$, we can start our summation from $n=1$. Therefore,</p>
+
+\[\begin{aligned}
+\sum_{n=1}^N c(n) &amp;= 15\sum_{n=1}^N 16^{n-1} -
+	43\sum_{n=1}^N 15^{n-1} + 
+	41\sum_{n=1}^N 14^{n-1} -
+	\sum_{n=1}^N 13^n
+\\ &amp;=
+	15\left( \frac{16^N-1}{16-1}-1 \right) -
+	43\left( \frac{15^N-1}{15-1}-1 \right) +
+	41\left( \frac{14^N-1}{14-1}-1 \right) -
+	\left( \frac{13^{N+1}-1}{13-1}-1 \right)
+\\ &amp;=
+	16^N-1-15 - 
+	\frac{43}{14}\left(15^N-1\right)+43 +
+	\frac{41}{13}\left(14^N-1\right)-41 -
+	\frac{1}{12}\left(13^{N+1}-1\right)+1
+\\ &amp;=
+	16^N - \frac{43}{14}15^N + \frac{41}{13}14^N - \frac{1}{12}13^{N+1} - 13 + \frac{1}{1092}
+\end{aligned}\]
+
+<p>Plugging in $N=16$ and converting to hexadecimal gets us the same answer. The fractions will neatly cancel out, as 1092 has 14, 13, and 12 as factors.</p>]]></content><author><name>Mughil Pari</name><email>mughilan.muthupari@gmail.com</email></author><category term="project_euler" /><category term="45_diff" /><summary type="html"><![CDATA[In the hexadecimal number system numbers are represented using 16 different digits: \[0,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F\] The hexadecimal number AF when written in the decimal number system equals $10\times 16+15=175$. In the 3-digit hexadecimal numbers 10A, 1A0, A10, and A01 the digits 0, 1, and A are all present. Like numbers written in base ten we write hexadecimal numbers without leading zeroes. How many decimal numbers containing at most sixteen hexadecimal digits exist with all of the digits 0, 1, and A present at least once? Give your answer as a hexadecimal number. (A,B,C,D,E and F in upper case, without any leading or trailing code that marks the number as hexadecimal and without leading zeroes, e.g. 1A3F and not: 1a3f and not 0x1a3f and not $1A3F and not #1A3F and not 0000001A3F)]]></summary></entry><entry><title type="html">#110 - Diophantine reciprocals II</title><link href="/blog/project_euler/2019-08-21-110-Diophantine-reciprocals-II/" rel="alternate" type="text/html" title="#110 - Diophantine reciprocals II" /><published>2019-08-21T15:17:00+00:00</published><updated>2023-06-27T03:45:28+00:00</updated><id>/blog/project_euler/110---Diophantine-reciprocals-II</id><content type="html" xml:base="/blog/project_euler/2019-08-21-110-Diophantine-reciprocals-II/"><![CDATA[<blockquote class="lead">
+  <p>In the following equation, $x$, $y$, and $n$ are positive integers.</p>
+
+\[\frac{1}{x} + \frac{1}{y} = \frac{1}{n}\]
+
+  <p>It can be verified that when $n=1260$ there are 113 distinct solutions and this is the least value of $n$ for which the total number of distinct solutions exceeds one hundred.</p>
+
+  <p>What is the least value of $n$ for which the number of distinct solutions exceeds four million?</p>
+
+  <p class="note">This problem is a much more difficult version of <a href="/blog/project_euler/2019-08-20-108-Diophantine-reciprocals-I" class="heading flip-title">#108 - Diophantine reciprocals I</a></p>
+</blockquote>
+<hr />
+
+<p>Please read the solution of <a href="/blog/project_euler/2019-08-20-108-Diophantine-reciprocals-I" class="heading flip-title">#108 - Diophantine reciprocals I</a> as it contains important concepts. In that problem, we assumed that the number of solutions will only have 3 and 5 as prime factors in order to keep the exponents of $n$ small. However, we cannot make the same assumption in this problem, as the number of solutions is much too large.</p>
+
+<p>We need the least value of $n$ such that $f(n^2) &gt; 8000000$. While we can’t say anything about which prime factors are in this value, we <em>can</em> say that the maximum prime factor is 47, since 3 is the minimum exponent, and $\lceil\log_3 8000000\rceil=15$, and the 15th prime factor is 47.</p>
+
+<p>Unfortunately, while we can write an algorithm to generate all numbers with prime factors 2 to 47, it would take a massive amount of time to run, since we would need to run through all possible cobinations of factors (of which there are $2^{15}$) of them.</p>
+
+<p>Instead, what we can do instead is find a <strong>list of candidate solutions</strong> and pick out our solution from that list. However, we need an upper bound in order to do that.</p>
+
+<h2 id="finding-an-upper-bound">Finding an upper bound</h2>
+<p>We need an upper bound $B$ such that there is some $n&lt;B$ with at least 4 million solutions. We can use the <em>factorial</em> function here, as it’s one of the most fastest growing functions. We can find the least $K$ such that $K!$ has at least 4 million solutions. Recall we need the prime factorization of $K!$ in order to find the number of solutions. <a href="https://en.wikipedia.org/wiki/Legendre's_formula">Legendre’s formula</a>, which utilizes divisibility to find the pwoer of each prime, can help us with this.</p>
+
+<p>Once we’ve found the prime factorization of $K!$, we know the minimum solution must exist below it. At this point, we can loop through all possible values of the exponents, since we have the maximum prime number possible (47) and we have limits on each individual exponent.</p>
+
+<p>This is done with recursion, where we can also decrease the remaining upper bound as we go e.g. if we have $2^8$ in our product so far, then the rest of the product shouldn’t exceed $\frac{K!}{2^8}$. Our final roadmap is as follows:</p>
+<ol>
+  <li>Find the least integer $K$ such that $K!$ has at least 4 million solutions, or 8 million factors.</li>
+  <li>Of the prime factors in that factorization of $K!$, loop through all integers that are less than $K!$.</li>
+  <li>Any integers that have at least 8 million factors get added to a running list.</li>
+  <li>The minimum value of that list is our answer.</li>
+</ol>
+
+<h2 id="legendres-formula">Legendre’s formula</h2>
+<p>Please see <a href="https://en.wikipedia.org/wiki/Legendre's_formula">this wiki</a> for a detailed statement of the formula, as well as an example of it in action.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># file: "problem110.py"
+</span><span class="k">def</span> <span class="nf">primeFactorFactorial</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="c1"># Use Legendre's formula.
+</span>    <span class="c1"># We check until the greatest prime less than n
+</span>    <span class="n">primes</span> <span class="o">=</span> <span class="n">primesieve</span><span class="p">.</span><span class="nf">primes</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="n">powers</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="c1"># For each prime...until halfway
+</span>    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">primes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="o">/</span><span class="mi">2</span><span class="p">:</span>
+        <span class="n">prime</span> <span class="o">=</span> <span class="n">primes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="c1"># Find largest power of prime
+</span>        <span class="c1"># less than n...
+</span>        <span class="n">stopInt</span> <span class="o">=</span> <span class="nf">int</span><span class="p">(</span><span class="n">math</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">prime</span><span class="p">))</span>
+        <span class="n">padic</span> <span class="o">=</span> <span class="nf">sum</span><span class="p">(</span><span class="n">n</span> <span class="o">//</span> <span class="p">(</span><span class="n">prime</span> <span class="o">**</span> <span class="n">np</span><span class="p">.</span><span class="nf">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">stopInt</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)))</span>
+        <span class="n">powers</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">padic</span><span class="p">)</span>
+        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="c1"># All primes that are more than
+</span>    <span class="c1"># half are guaranteed to only have
+</span>    <span class="c1"># one power. So extend the powers
+</span>    <span class="c1"># array by however many 1s...
+</span>    <span class="n">powers</span><span class="p">.</span><span class="nf">extend</span><span class="p">([</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="nf">len</span><span class="p">(</span><span class="n">primes</span><span class="p">)</span> <span class="o">-</span> <span class="n">i</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">np</span><span class="p">.</span><span class="nf">array</span><span class="p">(</span><span class="n">primes</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">object</span><span class="p">),</span> <span class="n">np</span><span class="p">.</span><span class="nf">array</span><span class="p">(</span><span class="n">powers</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">object</span><span class="p">)</span>
+</code></pre></div></div>
+<p>With this, we get that $K=34$, so $34!$ is an upper bound that has at least 8 million factors.</p>
+<h2 id="recursive-function">Recursive function</h2>
+<p>We keep track of which prime we’ve chosen, the list of all prime factors, the current prime divisors that are part of our product, and the remaining limit.</p>
+<ul>
+  <li>If our location goes off the end of the list, then we yield the number through the current prime divisors.</li>
+  <li>Otherwise, we loop all possible exponents of the current prime, and recurse with each chosen power, decreasing the limit accordingly. For example, with our original limit of $34!$, say we had $2^2\times 3^2$ as our current running total. The exponent limit for 5 would be $\lceil \log_5\left(\frac{34!}{2^2\times3^2}\right)\rceil + 1$. In this way, our limit actually decreases fairly quickly, and the recursion depth isn’t as deep as it would be.</li>
+  <li>Exponents are only even, so we increment by 2.</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># file: "problem110.py"
+</span><span class="k">def</span> <span class="nf">loopThroughNums</span><span class="p">(</span><span class="n">currDivLoc</span><span class="p">,</span> <span class="n">currDivPowers</span><span class="p">,</span> <span class="n">divisors</span><span class="p">,</span> <span class="n">limit</span><span class="p">):</span>
+    <span class="c1"># Base case is when we're over
+</span>    <span class="c1"># the current divisor location.
+</span>    <span class="c1"># In this case, we can yield a value.
+</span>    <span class="k">if</span> <span class="n">currDivLoc</span> <span class="o">&gt;=</span> <span class="nf">len</span><span class="p">(</span><span class="n">currDivPowers</span><span class="p">):</span>
+        <span class="k">yield</span> <span class="n">currDivPowers</span><span class="p">,</span> <span class="n">np</span><span class="p">.</span><span class="nf">prod</span><span class="p">(</span><span class="n">divisors</span> <span class="o">**</span> <span class="n">currDivPowers</span><span class="p">)</span>
+
+    <span class="c1"># For each possible divisor value
+</span>    <span class="c1"># in the current location, yield all
+</span>    <span class="c1"># possible values with that power...
+</span>    <span class="k">else</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">currDivLoc</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">loopLimit</span> <span class="o">=</span> <span class="n">math</span><span class="p">.</span><span class="nf">ceil</span><span class="p">(</span><span class="n">math</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="n">limit</span><span class="p">,</span> <span class="n">divisors</span><span class="p">[</span><span class="n">currDivLoc</span><span class="p">]))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">loopLimit</span> <span class="o">=</span> <span class="nf">min</span><span class="p">(</span><span class="n">currDivPowers</span><span class="p">[</span><span class="n">currDivLoc</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">math</span><span class="p">.</span><span class="nf">ceil</span><span class="p">(</span><span class="n">math</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="n">limit</span><span class="p">,</span> <span class="n">divisors</span><span class="p">[</span><span class="n">currDivLoc</span><span class="p">])))</span>
+        <span class="n">powerCopy</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">array</span><span class="p">(</span><span class="n">currDivPowers</span><span class="p">)</span>
+        <span class="c1"># Only doing square numbers, so go by 2s
+</span>        <span class="k">for</span> <span class="n">powerVal</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">loopLimit</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
+            <span class="n">powerCopy</span><span class="p">[</span><span class="n">currDivLoc</span><span class="p">]</span> <span class="o">=</span> <span class="n">powerVal</span>
+            <span class="k">for</span> <span class="n">product</span> <span class="ow">in</span> <span class="nf">loopThroughNums</span><span class="p">(</span><span class="n">currDivLoc</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">powerCopy</span><span class="p">,</span> <span class="n">divisors</span><span class="p">,</span>
+                                           <span class="n">limit</span> <span class="o">/</span> <span class="n">np</span><span class="p">.</span><span class="nf">prod</span><span class="p">(</span><span class="n">divisors</span><span class="p">[</span><span class="n">currDivLoc</span><span class="p">]</span> <span class="o">**</span> <span class="n">powerCopy</span><span class="p">[</span><span class="n">currDivLoc</span><span class="p">])):</span>
+                <span class="k">yield</span> <span class="n">product</span>
+</code></pre></div></div>
+<h2 id="putting-it-all-together">Putting it all together</h2>
+<p>We have two functions, so combine them. At the end we take the minimum of our list.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># file: "problem110.py"
+</span><span class="n">solsRequired</span> <span class="o">=</span> <span class="mi">4000000</span>
+<span class="n">factLimit</span> <span class="o">=</span> <span class="p">(</span><span class="n">solsRequired</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="c1"># Get the first n primes where n is ceil(log_2(factLimit))
+</span><span class="n">primes</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">array</span><span class="p">(</span><span class="n">primesieve</span><span class="p">.</span><span class="nf">n_primes</span><span class="p">(</span><span class="n">math</span><span class="p">.</span><span class="nf">ceil</span><span class="p">(</span><span class="n">math</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="n">factLimit</span><span class="p">,</span> <span class="mi">2</span><span class="p">))),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">object</span><span class="p">)</span>
+<span class="c1"># Get the factorial amount which has at least factLimit factors...
+</span><span class="n">n</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">_</span><span class="p">,</span> <span class="n">powers</span> <span class="o">=</span> <span class="nf">primeFactorFactorial</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="k">while</span> <span class="n">np</span><span class="p">.</span><span class="nf">prod</span><span class="p">(</span><span class="n">powers</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">factLimit</span><span class="p">:</span>
+    <span class="n">n</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">_</span><span class="p">,</span> <span class="n">powers</span> <span class="o">=</span> <span class="nf">primeFactorFactorial</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">{}! has at least {} solutions.</span><span class="sh">'</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">solsRequired</span><span class="p">))</span>
+
+<span class="c1"># Now we loop through all SQUARE numbers
+# meaning prime factorizations with even numbers
+# that are less than n! Any number with at least
+# factLimit factors, we yield and collect the
+# integer value to a list. Finally,
+# we take the minimum of that list, which becomes
+# our answer.
+</span><span class="n">possibilities</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">powers</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="nf">loopThroughNums</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="p">.</span><span class="nf">zeros</span><span class="p">(</span><span class="nf">len</span><span class="p">(</span><span class="n">primes</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">object</span><span class="p">),</span> <span class="n">primes</span><span class="p">,</span> <span class="n">math</span><span class="p">.</span><span class="nf">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">)):</span>
+    <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="n">np</span><span class="p">.</span><span class="nf">prod</span><span class="p">(</span><span class="n">powers</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">factLimit</span><span class="p">:</span>
+        <span class="n">possibilities</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="nf">int</span><span class="p">(</span><span class="n">value</span> <span class="o">**</span> <span class="mf">0.5</span><span class="p">))</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">Checked</span><span class="sh">'</span><span class="p">,</span> <span class="n">count</span><span class="p">,</span> <span class="sh">'</span><span class="s">values.</span><span class="sh">'</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">Minimum value is</span><span class="sh">'</span><span class="p">,</span> <span class="nf">min</span><span class="p">(</span><span class="n">possibilities</span><span class="p">))</span>
+</code></pre></div></div>
+<p>Running this code results in an output of,</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>34! has at least 4000000 solutions.
+Checked 47204 values.
+Minimum value is 93501300498606000600
+8.538059700000002 seconds.
+</code></pre></div></div>
+<p>We see that there were 47204 values below 34! which had at least 8 million factors. Our answer is the minimum of these, which is <strong>9350130049860600</strong>.</p>]]></content><author><name>Mughil Pari</name><email>mughilan.muthupari@gmail.com</email></author><category term="project_euler" /><category term="40_diff" /><summary type="html"><![CDATA[In the following equation, $x$, $y$, and $n$ are positive integers. \[\frac{1}{x} + \frac{1}{y} = \frac{1}{n}\] It can be verified that when $n=1260$ there are 113 distinct solutions and this is the least value of $n$ for which the total number of distinct solutions exceeds one hundred. What is the least value of $n$ for which the number of distinct solutions exceeds four million? This problem is a much more difficult version of #108 - Diophantine reciprocals I]]></summary></entry><entry><title type="html">#108 - Diophantine reciprocals I</title><link href="/blog/project_euler/2019-08-20-108-Diophantine-reciprocals-I/" rel="alternate" type="text/html" title="#108 - Diophantine reciprocals I" /><published>2019-08-20T17:36:00+00:00</published><updated>2023-06-27T03:45:28+00:00</updated><id>/blog/project_euler/108---Diophantine-reciprocals-I</id><content type="html" xml:base="/blog/project_euler/2019-08-20-108-Diophantine-reciprocals-I/"><![CDATA[<blockquote class="lead">
+  <p>In the following equation $x$, $y$, and $n$ are positive integers.</p>
+
+\[\frac{1}{x} + \frac{1}{y} = \frac{1}{n}\]
+
+  <p>For $n=4$ there are exactly three distinct solutions:</p>
+
+\[\begin{aligned}
+    \frac{1}{5} + \frac{1}{20} &amp;= \frac{1}{4}
+    \\
+    \frac{1}{6} + \frac{1}{12} &amp;= \frac{1}{4}
+    \\
+    \frac{1}{8} + \frac{1}{8} &amp;= \frac{1}{4}
+\end{aligned}\]
+
+  <p>What is the least value of $n$ for which the number of distinct solutions exceeds one-thousand?</p>
+
+  <p>This problem is an easier verison of <a href="/blog/project_euler/2019-08-21-110-Diophantine-reciprocals-II" class="heading flip-title">#110 - Diophantine reciprocals II</a>; it is strongly advised that you solve this one first.</p>
+</blockquote>
+<hr />
+
+<p>Since we are dealing with positive fractions, both $x$ and $y$ should be strictly greater than $n$. Suppose $x$ and $y$ exceed $n$ by $a$ and $b$ respectively. Then, we can rewrite the equation as follows:</p>
+
+\[\begin{aligned}
+    \frac{1}{a+n} + \frac{1}{b+n} &amp;= \frac{1}{n}
+    \\
+    \frac{a+b+2n}{(a+n)(b+n)} &amp;= \frac{1}{n}
+    \\
+    ab + an + bn + n^2 &amp;= an + bn + 2n^2
+    \\
+    ab &amp;= n^2
+\end{aligned}\]
+
+<p>The conclusion is that any values $a$ and $b$ which multiply together to get $n^2$ are valid solutions to the original problem. For example, with $n=4$, we have $n^2=16$. There are 3 pairs of numbers which multiply together to get 16: {1, 16}, {2, 8}, and {4, 4}. These correspond to the 3 solutions in the problem (by adding 4 to each): {5, 20}, {6, 12}, and {8, 8}.</p>
+
+<p>So now we solve a reframed problem: <strong>How many pairs of integers are there that multiply together to get</strong> $\mathbf{n^2}$. We would need the number of factors of $n^2$ in order to solve this. Since $n$ is a duplicated factor, the number of factors will be odd. 16 had 5 factors (1, 2, 4, 8, 16), which produced (5+1)/2 = 3 solutions.</p>
+
+<p>To find the number of factors of $n^2$, we need the prime factorization of $n^2$. If the prime factorization of $n^2=p_1^{e_1}p_2^{e_2}\cdots p_k^{e_k}$, then the number of factors $f(n^2)$ is given by:</p>
+
+<p>\(f(n^2) = \prod_{i=1}^k (e_i + 1)\)
+This is true for any number, not just $n^2$. We add one to account for the duplicated factor, then divide 2, in other words, the number of solutions $S(n)$ is given by:</p>
+
+\[S(n) = \frac{f(n^2) + 1}{2}\]
+
+<p>We are given the number of solutions we need to find, and asked to find $n$. Our solution will be working backwards. If $S(n)&gt; 1000$, then $f(n^2) \geq 2000$. To keep $n$ as small as possible, we must keep the exponents as small as possible. For $n^2$, we would want the exponents to only be either 2 or 4. In that case, when we calculate $f(n^2)$ the product will consist of 3s and 5s. Finding the smallest number with only these multiplicands will give us the smallest solution.</p>
+
+<p>We want the <strong>smallest number greater than 2000 that only has 3 and 5 as factors.</strong> To generate them in order, we will keep two pointers $p_3$ and $p_5$ (0-indexed) that point to the previous number we multiplied by 3 or 5 respectively in the array $A$. At each step we compare $3A[p_3]$ and $5A[p_5]$ and add whichever product is smaller (and increment its corresponding pointer). If they’re equal, we increment both. Here’s an example to generate them in order:</p>
+<ul>
+  <li>First, start with $A=[1]$, and $p_3=p_5=0$.</li>
+  <li>Compare $3\times 1$ and $5\times 1$. The former is smaller, so we add 3 to the array and increment $p_3$. $A=[1,3]$ and $p_3=1$.</li>
+  <li>Compare $3\times 3$ and $5\times 1$. The latter is smaller, so we add 5 and increment $p_5$. $A=[1,3,5]$ and $p_5=1$.</li>
+  <li>$3\times 3 &lt; 5\times 3$. Add 9 and increment $p_3$. $A=[1,3,5,9]$ and $p_3=2$.</li>
+  <li>Here, $3\times 5 = 5\times 3$. Add 15 to the array and increment <strong>both</strong>. $A=[1,3,5,9,15]$ and $p_3=3$ and $p_5=2$.</li>
+</ul>
+
+<p>In this fashion, we keep generating numbers until we go past our limit. We see the smallest number greater than 2000 is $3^4\times 5^2=2025$.</p>
+
+<p>This factorization tells us that in $f(n^2)$, we are multiplying by 3 four times and 5 twice. Since these correspond to exponents, this means we have four prime squares, and two prime fourth powers in the prime factorization of $n^2$. Going a step further, in the factorization of $\mathbf{n}$, we have four prime singletons, and two prime squares.</p>
+
+<p>To keep the value as small as possible, we assign larger powers to the smaller primes, and smaller powers to the larger primes. This means the minimum solution is $2^2\times 3^2\times 5\times 7\times 11\times 13 = \mathbf{180180}$.</p>
+
+<p>The code is only to calculate the smallest number above 2000 that only contains 3 and 5.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># file: "problem108.py"
+</span><span class="n">factLimit</span> <span class="o">=</span> <span class="mi">2001</span>
+<span class="c1"># Find smallest integer greater than
+# factLimit that only has 3 and 5 as prime factors
+# Two pointers to the current multiplicand
+# for either 3 or 5.
+</span><span class="n">threePoint</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">fivePoint</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">integers</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="p">[])]</span>  <span class="c1"># Start with 1 = 3^0 x 5^0
+</span><span class="k">while</span> <span class="n">integers</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">factLimit</span><span class="p">:</span>
+    <span class="c1"># Find the minimum value of 3 multiplied
+</span>    <span class="c1"># by the value at threePoint and 5 with
+</span>    <span class="c1"># value at fivePoint. Increment the pointer
+</span>    <span class="c1"># depending on which was chosen.
+</span>    <span class="c1"># If they're both equal, then we add one of them
+</span>    <span class="c1"># and increment both.
+</span>    <span class="k">if</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">integers</span><span class="p">[</span><span class="n">threePoint</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">5</span> <span class="o">*</span> <span class="n">integers</span><span class="p">[</span><span class="n">fivePoint</span><span class="p">][</span><span class="mi">0</span><span class="p">]:</span>
+        <span class="n">integers</span><span class="p">.</span><span class="nf">append</span><span class="p">((</span><span class="mi">3</span> <span class="o">*</span> <span class="n">integers</span><span class="p">[</span><span class="n">threePoint</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">integers</span><span class="p">[</span><span class="n">threePoint</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="mi">3</span><span class="p">]))</span>
+        <span class="n">threePoint</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">elif</span> <span class="mi">5</span> <span class="o">*</span> <span class="n">integers</span><span class="p">[</span><span class="n">fivePoint</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">integers</span><span class="p">[</span><span class="n">threePoint</span><span class="p">][</span><span class="mi">0</span><span class="p">]:</span>
+        <span class="n">integers</span><span class="p">.</span><span class="nf">append</span><span class="p">((</span><span class="mi">5</span> <span class="o">*</span> <span class="n">integers</span><span class="p">[</span><span class="n">fivePoint</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">integers</span><span class="p">[</span><span class="n">fivePoint</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="mi">5</span><span class="p">]))</span>
+        <span class="n">fivePoint</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">integers</span><span class="p">.</span><span class="nf">append</span><span class="p">((</span><span class="mi">3</span> <span class="o">*</span> <span class="n">integers</span><span class="p">[</span><span class="n">threePoint</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">integers</span><span class="p">[</span><span class="n">threePoint</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="mi">3</span><span class="p">]))</span>
+        <span class="n">threePoint</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">fivePoint</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="c1"># Calculate value.
+</span><span class="n">primes</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">29</span><span class="p">,</span> <span class="mi">31</span><span class="p">]</span>
+<span class="n">prod</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="c1"># Sort the powers greatest to least
+</span><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">power</span> <span class="ow">in</span> <span class="nf">enumerate</span><span class="p">(</span><span class="nf">sorted</span><span class="p">(</span><span class="n">integers</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="o">-</span><span class="n">x</span><span class="p">)):</span>
+    <span class="n">prod</span> <span class="o">*=</span> <span class="n">primes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">**</span> <span class="p">(</span><span class="n">power</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">int</span><span class="p">(</span><span class="n">prod</span> <span class="o">**</span> <span class="mf">0.5</span><span class="p">),</span> <span class="sh">'</span><span class="s">with</span><span class="sh">'</span><span class="p">,</span> <span class="p">(</span><span class="n">integers</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span><span class="p">,</span> <span class="sh">'</span><span class="s">solutions.</span><span class="sh">'</span><span class="p">)</span>
+</code></pre></div></div>
+<p>Running the code gets the correct output of,</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>180180 with 1013 solutions.
+5.779999999999674e-05 seconds.
+</code></pre></div></div>
+<p>Thus, our final answer is <strong>180180</strong>.</p>]]></content><author><name>Mughil Pari</name><email>mughilan.muthupari@gmail.com</email></author><category term="project_euler" /><category term="30_diff" /><summary type="html"><![CDATA[In the following equation $x$, $y$, and $n$ are positive integers. \[\frac{1}{x} + \frac{1}{y} = \frac{1}{n}\] For $n=4$ there are exactly three distinct solutions: \[\begin{aligned} \frac{1}{5} + \frac{1}{20} &amp;= \frac{1}{4} \\ \frac{1}{6} + \frac{1}{12} &amp;= \frac{1}{4} \\ \frac{1}{8} + \frac{1}{8} &amp;= \frac{1}{4} \end{aligned}\] What is the least value of $n$ for which the number of distinct solutions exceeds one-thousand? This problem is an easier verison of #110 - Diophantine reciprocals II; it is strongly advised that you solve this one first.]]></summary></entry><entry><title type="html">#87 - Prime power triples</title><link href="/blog/project_euler/2019-08-15-087-Prime-power-triples/" rel="alternate" type="text/html" title="#87 - Prime power triples" /><published>2019-08-15T10:51:00+00:00</published><updated>2023-06-27T03:45:28+00:00</updated><id>/blog/project_euler/087---Prime-power-triples</id><content type="html" xml:base="/blog/project_euler/2019-08-15-087-Prime-power-triples/"><![CDATA[<blockquote class="lead">
+  <p>The smallest number expressible as  the sum of a prime square, prime cube, and prime fourth is 28. In fact, there are exactly four numbers below fifty that can be expressed in such a way:</p>
+
+\[28 = 2^2+2^3+2^4
+\\
+33 = 3^2+2^3+2^4
+\\
+49 = 5^2+2^3+2^4
+\\
+47 = 2^2+3^3+2^4\]
+
+  <p>How many numbers below fifty million can be expressed as the sum of a prime square, prime cube, and prime fourth power?</p>
+</blockquote>
+<hr />
+
+<p>Due to the sum, the primes need to be less than $\sqrt{50000000}=7071.068$. We can easily generate all primes up to this limit, and subsequently choose a prime fourth power, third power, and second power on down.</p>
+
+<p>Once we’ve chosen a prime to represent the fourth power, we subtract this from fifty million, and take the cube root to obtain the maximum prime that can be cubed.We do the same with the square root. With this method, we can greatly reduce the number of primes we have to test. We use a boolean sieve which we sum at the end in order to count the numbers.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># file: "problem087.py"
+</span><span class="k">def</span> <span class="nf">sieve</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">primes</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span><span class="nf">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
+    <span class="c1"># For each number, cross out
+</span>    <span class="c1"># numbers that are multiples of it.
+</span>    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">p</span> <span class="ow">in</span> <span class="nf">enumerate</span><span class="p">(</span><span class="n">primes</span><span class="p">):</span>
+        <span class="n">j</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="k">while</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="nf">len</span><span class="p">(</span><span class="n">primes</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">primes</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">%</span> <span class="n">p</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">del</span> <span class="n">primes</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+            <span class="n">j</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">primes</span>
+
+<span class="n">limit</span> <span class="o">=</span> <span class="mi">50000000</span>
+<span class="n">primes</span> <span class="o">=</span> <span class="nf">sieve</span><span class="p">(</span><span class="nf">int</span><span class="p">(</span><span class="n">limit</span> <span class="o">**</span> <span class="mf">0.5</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="n">sumSieve</span> <span class="o">=</span> <span class="p">[</span><span class="bp">False</span><span class="p">]</span> <span class="o">*</span> <span class="n">limit</span>
+<span class="n">k</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">primes</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">**</span> <span class="mi">4</span> <span class="o">&lt;</span> <span class="n">limit</span><span class="p">:</span>
+    <span class="n">s1</span> <span class="o">=</span> <span class="n">primes</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">**</span> <span class="mi">4</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">primes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="p">(</span><span class="n">limit</span> <span class="o">-</span> <span class="n">s1</span><span class="p">)</span> <span class="o">**</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">):</span>
+        <span class="n">s2</span> <span class="o">=</span> <span class="n">s1</span> <span class="o">+</span> <span class="n">primes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">**</span> <span class="mi">3</span>
+        <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">while</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="nf">len</span><span class="p">(</span><span class="n">primes</span><span class="p">)</span> <span class="ow">and</span> <span class="n">primes</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&lt;</span> <span class="p">(</span><span class="n">limit</span> <span class="o">-</span> <span class="n">s2</span><span class="p">)</span> <span class="o">**</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">):</span>
+            <span class="n">s3</span> <span class="o">=</span> <span class="n">s2</span> <span class="o">+</span> <span class="n">primes</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">**</span> <span class="mi">2</span>
+            <span class="n">sumSieve</span><span class="p">[</span><span class="n">s3</span><span class="p">]</span> <span class="o">=</span> <span class="bp">True</span>
+            <span class="n">j</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">k</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">sum</span><span class="p">(</span><span class="n">sumSieve</span><span class="p">))</span>
+</code></pre></div></div>
+<p>Running our loop gets us an output of</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1097343
+4.7940836000000004 seconds.
+</code></pre></div></div>
+<p>Thus, the sum of all numbers that satisfy the condition is <strong>1097343</strong>.</p>]]></content><author><name>Mughil Pari</name><email>mughilan.muthupari@gmail.com</email></author><category term="project_euler" /><category term="20_diff" /><summary type="html"><![CDATA[The smallest number expressible as the sum of a prime square, prime cube, and prime fourth is 28. In fact, there are exactly four numbers below fifty that can be expressed in such a way: \[28 = 2^2+2^3+2^4 \\ 33 = 3^2+2^3+2^4 \\ 49 = 5^2+2^3+2^4 \\ 47 = 2^2+3^3+2^4\] How many numbers below fifty million can be expressed as the sum of a prime square, prime cube, and prime fourth power?]]></summary></entry></feed>
