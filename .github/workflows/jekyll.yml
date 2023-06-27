@@ -34,6 +34,7 @@ jobs:
           token: ${{ secrets.YOUR_CUSTOM_TOKEN }}
           target_branch: 'gh-pages'
           jekyll_env: production
+          jekyll_src: ./
           
 # # Deployment job
 #   deploy:
