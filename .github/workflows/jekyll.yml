@@ -32,7 +32,7 @@ concurrency:
 jobs:
   # Build job
   build:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -47,7 +47,7 @@ jobs:
         uses: actions/configure-pages@v3
       - name: Build with Jekyll
         # Outputs to the './_site' directory by default
-        run: bundle exec jekyll build --baseurl "%base_url%"
+        run: bundle exec jekyll build
         env:
           JEKYLL_ENV: production
       - name: Upload artifact
