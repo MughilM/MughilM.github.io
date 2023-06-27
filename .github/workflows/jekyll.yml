@@ -31,7 +31,7 @@ jobs:
             ${{ runner.os }}-gems-
       - uses: Cutwell/jekyll-build-action@v1
         with:
-          token: ${{ secrets.YOUR_CUSTOM_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           target_branch: 'gh-pages'
           jekyll_env: production
           jekyll_src: ./
