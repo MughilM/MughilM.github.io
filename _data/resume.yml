@@ -2,102 +2,105 @@
 # If you don't have a JSON Resume you can just edit this YAML file instead.
 # See also: <https://jsonresume.org/>.
 basics:
-  name: "Richard Hendricks"
-  label: "Programmer"
-  picture: "https://via.placeholder.com/240x240"
-  email: ""
-  phone: "(912) 555-4321"
-  website: "https://piedpiper.com"
+  name: "Mughilan Muthupari"
+  label: "Data Scientist"
+  picture: "/assets/img/pro_pic.jpg"
+  email: "mughilan.muthupari@gmail.com"
+  phone: "(240) 779-6852"
+  website: "www.linkedin.com/in/mughil-pari/"
   summary: >
-    Richard hails from Tulsa.
-    He has earned degrees from the University of Oklahoma and Stanford. (Go Sooners and Cardinals!)
-    Before starting Pied Piper, he worked for Hooli as a part time software developer.
-    While his work focuses on applied information theory,
-    mostly optimizing lossless compression schema of both the length-limited and adaptive variants,
-    his non-work interests range widely,
-    everything from quantum computing to chaos theory.
-    He could tell you about it, but THAT would NOT be a “length-limited” conversation!
-    Open `_data/resume.yml` to edit this text.
+    **This page still in progress. However, you can download a full PDF version of the resume using the 
+    button below.** 
+    Mughilan (Mughil) is from Boyds, Maryland, USA.
+    He has a M.S. in Data Science from Columbia University, and a B.S. Double Major in Computer
+    Science and Statistics from University of Maryland - College Park.
+    He is currently working as a data scientist at Battelle Memorial Institute. 
+    Before that, he has worked for FINRA as a Staff Developer. 
+    His industry experience revolves around machine learning and building deep learning models.
+    Domains and types of networks include transformer models for document classification, and 
+    image recognition on biological images.
   location:
-    address: "2712 Broadway St"
-    postalCode: "CA 94115"
-    city: "San Francisco"
-    countryCode: "US"
-    region: "California"
+    address: "14115 Bear Creek Dr"
+    postalCode: "20841"
+    city: "Boyds"
+    countryCode: "USA"
+    region: "Maryland"
   profiles:
-    - network: "Twitter"
-      username: "RHendricksCEO"
-      url: ""
     - network: "LinkedIn"
-      username: "Richard Hendricks"
-      url: ""
-work:
-  - company: "Pied Piper"
-    position: "CEO/President"
-    website: "https://piedpiper.com"
-    startDate: "2013-12-01"
-    endDate: ""
-    summary: >
-      Pied Piper is a multi-platform technology based on a proprietary universal compression algorithm that has
-      consistently fielded high Weisman Scores™ that are not merely competitive,
-      but approach the theoretical limit of lossless compression.
-    highlights:
-      - "Built an algorithm for artist to detect if their music was violating copy right infringement laws"
-      - "Successfully won Techcrunch Disrupt"
-      - "Optimized an algorithm that holds the current world record for Weisman Scores"
-volunteer:
-  - organization: "CoderDojo"
-    position: "Teacher"
-    website: "https://coderdojo.com/"
-    startDate: "2012-01-01"
-    endDate: "2013-01-01"
-    summary: "Global movement of free coding clubs for young people."
-    highlights:
-      - "Awarded 'Teacher of the Month'"
+      username: "Mughil Pari"
+      url: "www.linkedin.com/in/mughil-pari/"
+#work:
+#  - company: "Pied Piper"
+#    position: "CEO/President"
+#    website: "https://piedpiper.com"
+#    startDate: "2013-12-01"
+#    endDate: ""
+#    summary: >
+#      Pied Piper is a multi-platform technology based on a proprietary universal compression algorithm that has
+#      consistently fielded high Weisman Scores™ that are not merely competitive,
+#      but approach the theoretical limit of lossless compression.
+#    highlights:
+#      - "Built an algorithm for artist to detect if their music was violating copy right infringement laws"
+#      - "Successfully won Techcrunch Disrupt"
+#      - "Optimized an algorithm that holds the current world record for Weisman Scores"
+#volunteer:
+#  - organization: "CoderDojo"
+#    position: "Teacher"
+#    website: "https://coderdojo.com/"
+#    startDate: "2012-01-01"
+#    endDate: "2013-01-01"
+#    summary: "Global movement of free coding clubs for young people."
+#    highlights:
+#      - "Awarded 'Teacher of the Month'"
 education:
-  - institution: "University of Oklahoma"
-    area: "Information Technology"
-    studyType: "Bachelor"
-    startDate: "2011-06-01"
-    endDate: "2014-01-01"
-    gpa: "4.0"
-    courses:
-      - "DB1101 - Basic SQL"
-      - "CS2011 - Java Introduction"
-awards:
-  - title: "Digital Compression Pioneer Award"
-    date: "2014-11-01"
-    awarder: "Techcrunch"
-    summary: "There is no spoon."
-publications:
-  - name: "Video compression for 3d media"
-    publisher: "Hooli"
-    releaseDate: "2014-10-01"
-    website: "https://en.wikipedia.org/wiki/Silicon_Valley_(TV_series)"
-    summary: "Innovative middle-out compression algorithm that changes the way we store data."
-skills:
-  - name: "Web Development"
-    level: "Master"
-    keywords:
-      - "HTML"
-      - "CSS"
-      - "Javascript"
-  - name: "Compression"
-    level: "Master"
-    keywords:
-      - "Mpeg"
-      - "MP4"
-      - "GIF"
-languages:
-  - language: "English"
-    fluency: "Native speaker"
-interests:
-  - name: "Wildlife"
-    keywords:
-      - "Ferrets"
-      - "Unicorns"
-references:
-  - name: "Erlich Bachman"
-    reference: >
-      It is my pleasure to recommend Richard, his performance working as a consultant for Main St.
-      Company proved that he will be a valuable addition to any company.
+  - institution: "Columbia University"
+    area: "Data Science"
+    studyType: "Master's"
+    startDate: "2019-09-03"
+    endDate: "2020-12-23"
+#    gpa: "4.0"
+#    courses:
+#      - "DB1101 - Basic SQL"
+#      - "CS2011 - Java Introduction"
+  - institution: "University of Maryland - College Park"
+    area: "Computer Science and Statistics"
+    studyType: "Bachelor's"
+    startDate: "2015-08-31"
+    endDate: "2018-12-18"
+#awards:
+#  - title: "Digital Compression Pioneer Award"
+#    date: "2014-11-01"
+#    awarder: "Techcrunch"
+#    summary: "There is no spoon."
+#publications:
+#  - name: "Video compression for 3d media"
+#    publisher: "Hooli"
+#    releaseDate: "2014-10-01"
+#    website: "https://en.wikipedia.org/wiki/Silicon_Valley_(TV_series)"
+#    summary: "Innovative middle-out compression algorithm that changes the way we store data."
+#skills:
+#  - name: "Web Development"
+#    level: "Master"
+#    keywords:
+#      - "HTML"
+#      - "CSS"
+#      - "Javascript"
+#  - name: "Compression"
+#    level: "Master"
+#    keywords:
+#      - "Mpeg"
+#      - "MP4"
+#      - "GIF"
+#languages:
+#  - language: "English"
+#    fluency: "Native speaker"
+#interests:
+#  - name: "Wildlife"
+#    keywords:
+#      - "Ferrets"
+#      - "Unicorns"
+#references:
+#  - name: "Erlich Bachman"
+#    reference: >
+#      It is my pleasure to recommend Richard, his performance working as a consultant for Main St.
+#      Company proved that he will be a valuable addition to any company.
