@@ -29,70 +29,157 @@ basics:
     - network: "LinkedIn"
       username: "Mughil Pari"
       url: "www.linkedin.com/in/mughil-pari/"
-#work:
-#  - company: "Pied Piper"
-#    position: "CEO/President"
-#    website: "https://piedpiper.com"
-#    startDate: "2013-12-01"
-#    endDate: ""
-#    summary: >
-#      Pied Piper is a multi-platform technology based on a proprietary universal compression algorithm that has
-#      consistently fielded high Weisman Scores™ that are not merely competitive,
-#      but approach the theoretical limit of lossless compression.
-#    highlights:
-#      - "Built an algorithm for artist to detect if their music was violating copy right infringement laws"
-#      - "Successfully won Techcrunch Disrupt"
-#      - "Optimized an algorithm that holds the current world record for Weisman Scores"
-#volunteer:
-#  - organization: "CoderDojo"
-#    position: "Teacher"
-#    website: "https://coderdojo.com/"
-#    startDate: "2012-01-01"
-#    endDate: "2013-01-01"
-#    summary: "Global movement of free coding clubs for young people."
-#    highlights:
-#      - "Awarded 'Teacher of the Month'"
+work:
+  - company: "Battelle Memorial Institute"
+    position: "Data Scientist II"
+    website: "https://www.battelle.org"
+    startDate: "2022-03-14"
+    endDate: ""
+    summary: >
+      Battelle Memorial Institute (BMI) is a science and technology non-profit that performs a lot of contractual
+        work for the government. Mughil was a contractor for Battelle for 6 months until late September, and is currently
+        a full-time employee at Battelle.
+    highlights:
+      - "Developing an image recognition model, along with interpretability processes to examine 
+          spectral k-mer correlation maps to extract biological pathways in rice and corn"
+      - "Modeled evolving bioplumes using graph neural networks and general multi-layer perceptron (MLP) networks"
+      - "Researched using clustering and recurrent neural networks to detect patterns in 
+          human-generated random digits for potential use in an authentication system"
+  - company: "FINRA"
+    position: "Developer"
+    website: "https://www.finra.org/#/"
+    startDate: "2019-05-15"
+    endDate: "2022-03-11"
+    summary: >
+      Financial Industry Regulatory Authority (FINRA) is a broker-dealer overseer that manages and regulates all
+        the brokerages in the United States. Mughil was a contractor for FINRA for approximately two and a half years
+        until October 2021, and then transitioned to full-time after that.
+    highlights:
+      - "Worked with explainability techniques for risk predictions such as Lime and Shap. 
+          Communicated to stakeholders about analysis results as Team Lead"
+      - "Developed and maintained an advert ML classification system that used CNNs as the main model. 
+          Other various transformer models such as BERT and Longformer were also researched and tested."
+      - "Prototyped data pipelines and storage in S3 using Apache Spark (PySpark)"
+      - "Prototyped abstractive data summarization using the BERT LLM from Huggingface"
+      - "Utilized CNNs to archive U5 filings to improve efficiency. AWS Sagemaker was tested for a viable ML training system."
+  - company: "Moody's Investors Service"
+    position: "Software Intern"
+    website: "https://www.moodys.com"
+    startDate: "2020-06-01"
+    endDate: "2020-08-12"
+    summary: >
+      A summer internship at Moody's Investors Service.
+    highlights:
+      - "Developed an NLP NER pipeline that implements a combination of weak supervision and active learning 
+          to support a large-scale human labeling effort. Labor costs were reduced by about 70%."
+      - "Heuristic labeling functions were written Snorkel, and human labels were gathered using an annotation tool."
+  - company: "NASA Center for Climate Simulations"
+    position: "Research Intern"
+    website: "https://www.nccs.nasa.gov"
+    startDate: "2017-06-05"
+    endDate: "2017-08-12"
+    summary: >
+      A summer internship at the Center for Climate Simulations at NASA which revolves around analyzing high-volume
+        and high-frequency temperature data. Different analytic systems were compared and examined for anomalies.
+    highlights:
+      - "Used the Advanced Data Analytics Platform (ADAPT) to examine historic daily temperature cycle and perform other statistical calculations."
+      - "Compared calculations across different systems to detect discrepancies, and presented findings."
+      - "Presented findings at poster symposium"
 education:
   - institution: "Columbia University"
     area: "Data Science"
     studyType: "Master's"
     startDate: "2019-09-03"
     endDate: "2020-12-23"
-#    gpa: "4.0"
-#    courses:
-#      - "DB1101 - Basic SQL"
-#      - "CS2011 - Java Introduction"
+    gpa: "3.762"
+    courses:
+      - "CSOR4246 - Algorithms for Data Science"
+      - "IEOR4722 - Stochastic Controls and Financial Applications"
+      - "STAT5702 - Exploratory Data Analysis and Visualization"
+      - "COMS4995 - Applied Deep Learning"
+      - "FINC8306 - Capital Markets and Investments"
+      - "INAF6506 - Data Science and Public Policy"
+      - "STAT5703 - Statistical Inference and Modeling"
+      - "IEOR4735 - Structured and Hybrid Products"
+      - "MATH5220 - Quantitative Methods and Investments"
   - institution: "University of Maryland - College Park"
     area: "Computer Science and Statistics"
     studyType: "Bachelor's"
     startDate: "2015-08-31"
     endDate: "2018-12-18"
+  - institution: "University of Maryland - College Park"
+    area: "Computer Science and Statistics"
+    studyType: "Bachelor's"
+    startDate: "2015-08-26"
+    endDate: "2018-12-28"
+    gpa: "3.798"
 #awards:
 #  - title: "Digital Compression Pioneer Award"
 #    date: "2014-11-01"
 #    awarder: "Techcrunch"
 #    summary: "There is no spoon."
-#publications:
-#  - name: "Video compression for 3d media"
-#    publisher: "Hooli"
-#    releaseDate: "2014-10-01"
-#    website: "https://en.wikipedia.org/wiki/Silicon_Valley_(TV_series)"
-#    summary: "Innovative middle-out compression algorithm that changes the way we store data."
-#skills:
-#  - name: "Web Development"
-#    level: "Master"
-#    keywords:
-#      - "HTML"
-#      - "CSS"
-#      - "Javascript"
-#  - name: "Compression"
-#    level: "Master"
-#    keywords:
-#      - "Mpeg"
-#      - "MP4"
-#      - "GIF"
-#languages:
-#  - language: "English"
+publications:
+  - name: "Where's the Learning in Representation Learning for Compositional Semantics and the Case of Thematic Fit"
+    publisher: "EMNLP Blackbox"
+    releaseDate: "2022-10-23"
+    website: "https://arxiv.org/abs/2208.04749"
+    summary: >
+      A series of thematic fit NLP deep learning experiments to examine where in a neural network does 
+        the actual learning take place. Is it in the word embeddings? In the body of the network? 
+        Or maybe we even the output layer?
+  - name: "An Immersive Experience: Visualizing Large-Scale Climate Data using Virtual Reality and Infrared Hand-Tracking Technology"
+    publisher: "UMD Gemstone"
+    releaseDate: "2019"
+    website: "https://drum.lib.umd.edu/items/b974e1e9-f599-4146-988f-516ef00597d4"
+    summary: >
+      A novel way to visualize large climate datasets using virtual reality and infrared sensors, as current 
+        visualization technology is too outdated and unintuitive to make swift climate decisions and analyses.
+skills:
+  - name: "AI/ML"
+    level: "Master"
+    keywords:
+      - "machine learning"
+      - "deep learning"
+      - "image recognition"
+      - "image segmentation"
+      - "time series"
+      - "natural language processing"
+      - "reinforcement learning"
+      - "transformers"
+      - "CNN"
+      - "GNN"
+      - "autoencoder"
+      - "model interpretability"
+  - name: "MLOps and Technologies"
+    level: "Master"
+    keywords:
+      - "PyTorch"
+      - "Tensorflow"
+      - "PyTorch Lightning"
+      - "MLFlow"
+      - "Weights and Biases"
+      - "data drift"
+      - "Apache Spark"
+      - "data pipelines"
+      - "Sagemaker"
+      - "Jenkins"
+      - "Github Actions"
+      - "PostgreSQL"
+  - name: "Cloud Technologies"
+    level: "Master"
+    keywords:
+      - "AWS"
+      - "GCP"
+      - "S3"
+      - "EC2"
+      - "CloudWatch"
+  - name: "Programming Languages"
+    level: "Master"
+    keywords:
+      - "Python"
+      - "R"
+      - "SQL"
+      - "Java"
 #    fluency: "Native speaker"
 #interests:
 #  - name: "Wildlife"
