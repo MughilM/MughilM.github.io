@@ -3,7 +3,6 @@ layout: projects
 title: Projects
 show_collection: projects
 description: >
-  How people are using Hydejack in the real world. 
-  This page is built using the `projects` layout* that you can use yourself to build a portfolio.
+  A list of all my projcets that are currently ongoing and completed. Includes both academic and personal.
 no_groups: true
 ---
