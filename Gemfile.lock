@@ -106,6 +106,7 @@ GEM
 PLATFORMS
   x64-unknown
   x86_64-linux
+  x64-mingw-ucrt
 
 DEPENDENCIES
   duktape
