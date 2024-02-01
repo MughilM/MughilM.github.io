@@ -55,7 +55,7 @@ menu:
     url:               /projects/
   - title:             Project Euler
     url:               /blog/project-euler
-  - title:             Résumé*
+  - title:             Résumé
     url:               /resume/
   - title:             Documentation
     url:               /docs/

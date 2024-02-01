@@ -1,3 +1,35 @@
+@font-face {  /* Regular */
+  font-family: 'Recursive';
+  src: url("../assets/fonts/Recursive/Recursive_VF_1.085.woff2") format("woff2-variations");
+  font-variation-settings: "MONO" 1, "CASL" 0, "wght" 450;
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {  /* Bold */
+  font-family: 'Recursive';
+  src: url("../assets/fonts/Recursive/Recursive_VF_1.085.woff2") format("woff2-variations");
+  font-variation-settings: "MONO" 1, "CASL" 1, "wght" 650;
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {  /* Italic */
+  font-family: 'Recursive';
+  src: url("../assets/fonts/Recursive/Recursive_VF_1.085.woff2") format("woff2-variations");
+  font-variation-settings: "MONO" 1, "CASL" 1, "wght" 450, "slnt" -15;
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {  /* Bold Italic */
+  font-family: 'Recursive';
+  src: url("../assets/fonts/Recursive/Recursive_VF_1.085.woff2") format("woff2-variations");
+  font-variation-settings: "MONO" 1, "CASL" 1, "wght" 650, "slnt" -15;
+  font-weight: bold;
+  font-style: italic;
+}
+
 .dl-table {
   a {
     @supports ((text-decoration-thickness: initial) and (text-underline-offset: initial)) {
@@ -10,6 +42,15 @@
 
   .btn, .gumroad-button  {
     margin: 1rem 0;
+  }
+}
+
+code, pre {
+  font-family: "Recursive", monospace;
+
+  .hljs-keyword, .hljs-title.function_ {
+    font-style: italic;
+    font-weight: bold;
   }
 }
 
