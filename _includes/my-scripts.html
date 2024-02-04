@@ -18,8 +18,14 @@
 </script>
 
 <!-- Highlight.js -->
-<link rel="stylesheet" href="/assets/highlight/styles/night-owl.css" media="(prefers-color-scheme: dark), (prefers-color-scheme: no-preference)">
-<link rel="stylesheet" href="/assets/highlight/styles/docco.css" media="(prefers-color-scheme: light)">
+<link rel="stylesheet" href="/assets/highlight/styles/night-owl.min.css" media="(prefers-color-scheme: dark), (prefers-color-scheme: no-preference)">
+<link rel="stylesheet" href="/assets/highlight/styles/docco.min.css" media="(prefers-color-scheme: light)">
 <script src="/assets/highlight/highlight.min.js"></script>
 
-<script>hljs.highlightAll()</script>
+<!--<script>hljs.highlightAll()</script>-->
+
+<script>
+    document.getElementById('_pushState').addEventListener('hy-push-state-load', function () {
+        hljs.highlightAll()
+    });
+</script>

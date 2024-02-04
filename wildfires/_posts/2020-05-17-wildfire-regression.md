@@ -14,16 +14,21 @@ image:
     7952w: /assets/img/projects/wildfire_orig.jpg
 accent_color: '#e25822'
 theme_color: '#e25822'
+related_posts:
+  - wildfires/_posts/2020-05-15-wildfire-preprocessing.md
+  - wildfires/_posts/2020-05-19-wildfire-network.md
 ---
 
 # Wildfire Incidence Prediction - Part II - Spatial Logistic Regression
 This is second in a series of posts detailing how to predict incidence of wildfires. For input data, we use
 historical wildfires, land usage data, and climatology data. In terms of preprocessing, we force all datasets to
 have the same 702 x 306 shape. The fire matrix contains a count of how many fires have occurred in that location.
-Please see ...part 1 post here... for a detailed code overview of the actual preprocessing.
+Please see [Wildfire Incidence I - Preprocessing](/wildfires/_posts/2020-05-15-wildfire-preprocessing.md){:.heading.flip-title} for a detailed 
+code overview of the actual preprocessing.
 
 * toc
 {:toc}
+* * *
 
 ## Introduction
 In this post, I will go over how we perform our spatial logistic regression. It is "spatial" because we use
@@ -756,3 +761,5 @@ Another thing you have noticed that is that the regression model was unable to c
 
 In the next notebook, we will actually apply neural networks to see if we can squeeze even more additional performance out of our data.
 
+Continue with [Wildfire Incidence III - Basic Neural Network](2020-05-19-wildfire-network.md){:.heading.flip-title}
+{:.read-more}

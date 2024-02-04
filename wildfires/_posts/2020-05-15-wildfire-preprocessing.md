@@ -14,9 +14,13 @@ image:
     7952w: /assets/img/projects/wildfire_orig.jpg
 accent_color: '#e25822'
 theme_color: '#e25822'
+related_posts:
+  - wildfires/_posts/2020-05-17-wildfire-regression.md
+  - wildfires/_posts/2020-05-19-wildfire-network.md
 ---
 
 # Wildfire Incidence Prediction - Part I - Preprocessing
+
 These series of blog posts will go over our methods for predicting wildfires across the United States
 given historical wildfire incidences, land usage data, and high-resolution climatology data.
 Please refer to the [Wildfire Incidence Prediction (CU)](/_projects/wildfire.md){:.heading.flip-title} to learn more about an 
@@ -27,6 +31,7 @@ standalone runnable script, and a notebook containing similar language and some 
 
 * toc
 {:toc}
+* * *
 
 ## Introduction
 Before building any model, it is important to go over the data on hand, and do any preprocessing needed.
@@ -705,3 +710,7 @@ for res, divs, (LAT_MIN_IDX, LON_MIN_IDX, LAT_MAX_IDX, LON_MAX_IDX) in (
 With this, we have preprocessed all the data we have on hand. The next step is finally to move forward with the 
 spatial logistic regression. There will actually be extra processing needed in order to format the matrix of values 
 for model ingestion. Like with this notebook, we will work our way up from the most coarse resolution to the finest.
+
+
+Continue with [Wildfire Incidence II - Spatial Logistic Regression](2020-05-17-wildfire-regression.md){:.heading.flip-title}
+{:.read-more}

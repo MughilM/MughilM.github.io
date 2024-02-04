@@ -45,6 +45,13 @@
   }
 }
 
+div.highlight {
+  button {
+    border-bottom: none;
+    border-left: none;
+  }
+}
+
 code, pre {
   font-family: "Recursive", monospace;
 
