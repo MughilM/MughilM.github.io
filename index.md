@@ -7,8 +7,6 @@ cover: true
 
 <!--author-->
 
-THIS SITE IS STILL UNDER CONSTRUCTION. PLEASE FEEL FREE TO VISIT PAGES CURRENTLY PUBLISHED BELOW :).
-
 <!--projects-->
 
 <!--posts-->
