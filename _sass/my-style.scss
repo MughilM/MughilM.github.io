@@ -55,7 +55,7 @@ div.highlight {
 code, pre {
   font-family: "Recursive", monospace;
 
-  .hljs-keyword, .hljs-title.function_ {
+  .hljs-keyword, .hljs-title.function_, .hljs-title.class_ {
     font-style: italic;
     font-weight: bold;
   }

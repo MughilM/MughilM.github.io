@@ -17,6 +17,7 @@ theme_color: '#e25822'
 related_posts:
   - wildfires/_posts/2020-05-15-wildfire-preprocessing.md
   - wildfires/_posts/2020-05-19-wildfire-network.md
+tags: [logistic regression, geospatial data, climate]
 ---
 
 # Wildfire Incidence Prediction - Part II - Spatial Logistic Regression

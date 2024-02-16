@@ -17,6 +17,7 @@ theme_color: '#e25822'
 related_posts:
   - wildfires/_posts/2020-05-15-wildfire-preprocessing.md
   - wildfires/_posts/2020-05-17-wildfire-regression.md
+tags: [geospatial data, neural network, climate]
 ---
 
 # Wildfire Incidence III - Basic Neural Network

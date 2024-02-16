@@ -43,5 +43,7 @@ This is a more involved project which involved predicting the exact presence of 
 given a time-series of infrared images. This is a segmentation task, where a prediction is made for each 
 individual pixel in the image.
 
+- [Using UNet and PyTorch Lightning to detect Contrails in Images](/data_science/_posts/2024-02-15-umobilenet.md){:.heading.flip-title}
+
 Photo by <a href="https://unsplash.com/@choys_?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Conny Schneider</a> on <a href="https://unsplash.com/photos/a-blue-abstract-background-with-lines-and-dots-pREq0ns_p_E?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
 {:.faded}
