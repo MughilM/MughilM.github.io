@@ -15,6 +15,7 @@ image:
 accent_color: '#3486eb'
 theme_color: '#3486eb'
 tags: [image segmentation, climate, PyTorch Lightning, Kaggle]
+applause_button: true
 ---
 
 This is part 1 in a short series of notebooks that will aim to tackle the Kaggle competition of predicting the presence

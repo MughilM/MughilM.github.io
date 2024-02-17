@@ -1,6 +1,14 @@
-{% if site.clap_button %}
-  <clap-button class="mb6" {% if include.hidden == true %}hidden{% endif %}></clap-button>
-  {% if include.hidden == true %}<hr class="dingbat related mb6" />{% endif %}
+<!-- Handle including the applause button. If absent, leave the dingbat content alone -->
+{% if page.applause_button %}
+  <applause-button class="mb6"
+                   color="{{ site.accent_color }}"
+  url="{{ post.url | absolute_url }}" >
+  </applause-button>
 {% else %}
-  <hr class="dingbat related mb6" />
+  {% if site.clap_button %}
+    <clap-button class="mb6" {% if include.hidden == true %}hidden{% endif %}></clap-button>
+    {% if include.hidden == true %}<hr class="dingbat related mb6" />{% endif %}
+  {% else %}
+    <hr class="dingbat related mb6" />
+  {% endif %}
 {% endif %}
