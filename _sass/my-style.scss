@@ -73,6 +73,19 @@ applause-button {
   }
 }
 
+.utterances {
+  max-width: 100%;
+}
+
+.giscus, .giscus-frame {
+  width: 100%;
+}
+
+.giscus-frame {
+  border: none;
+}
+
+
 // .lead.aspect-ratio.sixteen-nine { 
 //   border: 1px solid var(--border-color);
 //   transition: border-color 500ms ease;

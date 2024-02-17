@@ -174,7 +174,19 @@ defaults:
 
 # Setting a disqus shortname will enable the comment section on
 # pages with `comments: true` in the front matter.
-# disqus:                <username>
+comments:
+  provider:         giscus
+
+giscus:
+  repo:             MughilM/MughilM.github.io
+  repo-id:          R_kgDOJOqNKA
+  category:         Comments
+  category-id:      DIC_kwDOJOqNKM4CdTIC
+  mapping:          pathname
+  reaction-enabled: 1
+  theme:            preferred_color_scheme
+  crossorigin:      anonymous
+
 
 # Setting a tinyletter username will enable the newsletter subscription box.
 # PRO version only!
