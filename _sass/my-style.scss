@@ -85,6 +85,27 @@ applause-button {
   border: none;
 }
 
+.clap-count {
+  @extend h4;
+  color: var(--accent-color);
+  display: none;
+
+  svg {
+    height: 1em;
+    vertical-align: middle;
+    width: 1em;
+  }
+
+  .flat {
+    fill: var(--body-bg);
+  }
+
+  .outline {
+    fill: var(--accent-color);
+  }
+}
+
+
 
 // .lead.aspect-ratio.sixteen-nine { 
 //   border: 1px solid var(--border-color);
