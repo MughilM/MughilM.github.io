@@ -14,27 +14,41 @@ basics:
     Mughilan (Mughil) is from Boyds, Maryland, USA.
     He has a M.S. in Data Science from Columbia University, and a B.S. Double Major in Computer
     Science and Statistics from University of Maryland - College Park.
-    He is currently working as a data scientist at Battelle Memorial Institute. 
-    Before that, he has worked for FINRA as a Staff Developer. 
+    He is currently working as an ML Engineer at Meta.
+    Before that, he has worked for the Battelle Memorial Institute as a Data Scientist and at
+    FINRA as a Staff Developer. 
     His industry experience revolves around machine learning and building deep learning models.
     Domains and types of networks include transformer models for document classification, and 
     image recognition on biological images.
   location:
-    address: "14115 Bear Creek Dr"
-    postalCode: "20841"
-    city: "Boyds"
+    address: "50 Christopher Columbus Dr"
+    postalCode: "07302"
+    city: "Jersey City"
     countryCode: "USA"
-    region: "Maryland"
+    region: "New Jersey"
   profiles:
     - network: "LinkedIn"
       username: "Mughil Pari"
       url: "www.linkedin.com/in/mughil-pari/"
 work:
+  - company: "Meta - Social Impact Ecosystems (SIE)"
+    position: "ML Engineer"
+    website: "https://www.meta.com"
+    startDate: "2024-04-22"
+    endDate: ""
+    summary: >
+      The Social Impact Ecosystems (SIE) group at Meta is part of the larger Central Social Impact (CSI) umbrella.
+      The central group focuses on decreasing prevalence on a number of social and sensitive issues, most notably
+      teen safety, along with elections, health, and misinformation. This group focuses on the entire family 
+      of apps - Facebook, Instagram, and Threads.
+    highlights:
+      - "Part of the SIE Ranking and Recommendations Team, which primarily focuses on developing ranking algorithms
+        in order to reduce exposure of violating content to teens."
   - company: "Battelle Memorial Institute"
     position: "Data Scientist II"
     website: "https://www.battelle.org"
     startDate: "2022-03-14"
-    endDate: ""
+    endDate: "2024-04-19"
     summary: >
       Battelle Memorial Institute (BMI) is a science and technology non-profit that performs a lot of contractual
         work for the government. Mughil was a contractor for Battelle for 6 months until late September, and is currently
