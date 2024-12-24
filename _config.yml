@@ -91,7 +91,7 @@ theme: jekyll-theme-hydejack
  
 # Sidebar image and theme color of the site.
 accent_image:          /assets/img/white_blur.jpg
-accent_color:          rgb(235,63,24)
+accent_color:          rgb(103, 77, 195)
 
 # This is used for the `theme-color` meta tag,
 # which changes the background color of the browser UI in certain browsers.
