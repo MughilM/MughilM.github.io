@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "104 - Pandigital Fibonacci ends"
+title: "#104 - Pandigital Fibonacci ends"
 date: 2018-05-18 16:51
 number: 104
 tags: [25_diff]
