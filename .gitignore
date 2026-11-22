@@ -4,3 +4,10 @@ _site
 .jekyll-metadata
 vendor
 .idea
+
+# Licensed Benedikt webfonts (Fontspring EULA forbids distributing them with site source).
+# Served from a private repo at build time instead.
+assets/fonts/Benedikt/
+
+# macOS folder metadata
+.DS_Store
