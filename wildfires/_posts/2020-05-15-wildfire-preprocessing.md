@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Wildfire Incidence I - Preprocessing
+title: Wildfire Incidence Prediction - Part I - Preprocessing
 description: >
   Part 1 of predicting wildfire incidence. This goes over preprocessing
   all the input data (wildfires, land usage, and climatology).
@@ -19,8 +19,6 @@ related_posts:
   - wildfires/_posts/2020-05-19-wildfire-network.md
 tags: [logistic regression, geospatial data, climate]
 ---
-
-# Wildfire Incidence Prediction - Part I - Preprocessing
 
 These series of blog posts will go over our methods for predicting wildfires across the United States
 given historical wildfire incidences, land usage data, and high-resolution climatology data.

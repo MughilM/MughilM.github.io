@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Wildfire Incidence II - Spatial Logistic Regression
+title: Wildfire Incidence Prediction - Part II - Spatial Logistic Regression
 description: >
   Part 2 of predicting wildfire incidence. After preprocessing, we perform
   spatial logistic regression using all the data on hand.
@@ -20,7 +20,6 @@ related_posts:
 tags: [logistic regression, geospatial data, climate]
 ---
 
-# Wildfire Incidence Prediction - Part II - Spatial Logistic Regression
 This is second in a series of posts detailing how to predict incidence of wildfires. For input data, we use
 historical wildfires, land usage data, and climatology data. In terms of preprocessing, we force all datasets to
 have the same 702 x 306 shape. The fire matrix contains a count of how many fires have occurred in that location.

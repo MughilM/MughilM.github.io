@@ -20,8 +20,6 @@ related_posts:
 tags: [geospatial data, neural network, climate]
 ---
 
-# Wildfire Incidence III - Basic Neural Network
-
 We have seen how to properly preprocess the 3 data sources (historical wildfire incidence, climatology,
 and land usage) to get it ready to push it through a logistic regression model. However, the beauty of machine
 learning is that there is often more than one tool for the job.
