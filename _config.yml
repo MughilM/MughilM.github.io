@@ -406,6 +406,10 @@ compress_html:
 
 sass:
   style:               compressed
+  # The vendored Hydejack theme uses Sass features deprecated since Dart Sass 1.80
+  # (removal planned for Dart Sass 3.0). jekyll-sass-converter 3.x stays on Sass 1.x,
+  # so silence these known warnings; any other deprecation still shows.
+  silence_deprecations: [import, global-builtin, color-functions, if-function]
 
 
 # Jekyll Compose Defaults
