@@ -45,6 +45,21 @@ jobs:
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v6
+      # Licensed Benedikt webfonts live in a private repo (the EULA forbids
+      # distributing them with site source). Copy only the .woff2 files into the
+      # same gitignored folder used locally, then remove the checkout.
+      - name: Fetch licensed fonts
+        uses: actions/checkout@v7
+        with:
+          repository: MughilM/benedikt-fonts
+          ssh-key: ${{ secrets.BENEDIKT_FONTS_DEPLOY_KEY }}
+          path: _fonts-src
+          persist-credentials: false
+      - name: Install font files
+        run: |
+          mkdir -p assets/fonts/Benedikt
+          cp _fonts-src/*.woff2 assets/fonts/Benedikt/
+          rm -rf _fonts-src
       - name: Build with Jekyll
         # Outputs to the './_site' directory by default
         run: bundle exec jekyll build

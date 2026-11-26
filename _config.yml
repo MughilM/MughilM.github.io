@@ -104,11 +104,11 @@ google_fonts:          Changa:wght@200..800|Lexend+Deca:wght@100..900|Piazzolla:
 
 # The text font. Expects a string that is a valid CSS font-family value.
 # To change font-weight, see _sass/variables.scss
-font:                  Piazzolla, Helvetica, Arial, serif
+font:                  Benedikt, Georgia, serif
 
 # The font used for headings. Expects a string that is a valid CSS font-family value.
 # To change font-weight, see _sass/variables.scss
-font_heading:          Lexend Deca, Helvetica, Arial, sans-serif
+font_heading:          Benedikt, Georgia, serif
 
 # The font used for code blocks. Expects a string that is a valid CSS font-family value.
 font_code:             Recursive, Fira Code, Menlo, Monaco, Consolas, monospace;

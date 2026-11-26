@@ -80,7 +80,7 @@ tag_start:             'on '
 tag_separator:         ', '
 from_to_separator:     '–'
 breadcrumbs_home:      'home'
-breadcrumbs_separator: '/'
+breadcrumbs_separator: '·'
 
 # Date formats
 # ---------------------------------------------------------------------------------------

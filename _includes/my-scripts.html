@@ -75,3 +75,45 @@
         }
     });
 </script>
+
+<!-- Title animation crossfade (Benedikt typography, see _sass/_benedikt.scss).
+     Hydejack animates a stand-in <h1 class="page-title"> from the clicked link to
+     the title position. This splits that stand-in into two stacked copies: one
+     styled like the clicked link (e.g. an italic cross-reference) that fades out,
+     and one in the title style that fades in, both riding the theme's motion. -->
+<script>
+    (function () {
+        var fromStyle = null;
+        // Capture phase, so this runs before the theme builds its stand-in title.
+        document.addEventListener('hy-push-state-start', function (e) {
+            var a = e.detail && e.detail.anchor;
+            if (!a) { fromStyle = null; return; }
+            var cs = getComputedStyle(a);
+            fromStyle = {
+                fontStyle: cs.fontStyle,
+                fontWeight: cs.fontWeight,
+                fontVariantCaps: cs.fontVariantCaps,
+                letterSpacing: cs.letterSpacing,
+                textTransform: cs.textTransform
+            };
+        }, true);
+        // The stand-in is inserted and measured synchronously by the theme; this
+        // observer runs afterwards, so the theme's geometry is unaffected.
+        new MutationObserver(function () {
+            var t = document.querySelector('.animation-main .page-title:not([data-split])');
+            if (!t || !fromStyle) return;
+            var text = t.textContent;
+            t.setAttribute('data-split', '');
+            t.textContent = '';
+            var from = document.createElement('span');
+            var to = document.createElement('span');
+            from.className = 'flip-from';
+            to.className = 'flip-to';
+            from.textContent = text;
+            to.textContent = text;
+            Object.assign(from.style, fromStyle);
+            t.appendChild(from);
+            t.appendChild(to);
+        }).observe(document.body, { childList: true, subtree: true });
+    })();
+</script>

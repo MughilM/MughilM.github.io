@@ -1,0 +1,228 @@
+// =============================================================================
+// Benedikt typography
+// -----------------------------------------------------------------------------
+// The font files are licensed webfonts (Fontspring EULA): they are gitignored in
+// this repo and copied into assets/fonts/Benedikt/ from the private
+// MughilM/benedikt-fonts repo during the GitHub Actions build.
+//
+// What the font provides (verified from the files):
+//   * small caps (smcp, c2sc) in the UPRIGHT styles only, incl. figures,
+//     currency and math operators; the italics have none
+//   * figures: default = lining tabular; pnum = lining proportional;
+//     onum = old-style (tabular widths only); there is no lnum feature
+//   * ss01 (= salt) alternate a d g i m q r t…; ss02–ss05 alternate g (and a
+//     few others); six g's in total
+//   * calt with ~180 contextual rules, liga incl. capital pairs, dlig
+// Showcase of every case below: /typography/
+// =============================================================================
+
+// --- Font faces --------------------------------------------------------------
+@font-face {
+  font-family: 'Benedikt';
+  src: url('/assets/fonts/Benedikt/benedikt-regular-webfont.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Benedikt';
+  src: url('/assets/fonts/Benedikt/benedikt-regularitalic-webfont.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Benedikt';
+  src: url('/assets/fonts/Benedikt/benedikt-bold-webfont.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Benedikt';
+  src: url('/assets/fonts/Benedikt/benedikt-bolditalic-webfont.woff2') format('woff2');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+// Named stylistic sets, applied with font-variant-alternates so they combine
+// with the other font-variant-* settings instead of replacing them.
+@font-feature-values Benedikt {
+  @styleset {
+    alt-forms: 1;   // ss01: alternate a, d, g, i, m, q, r, t, Q, 4, $, &
+    g-two: 2;       // ss02: g (+ f, u, y, ß, 4, &)
+    g-three: 3;     // ss03: g (+ f, y, ß, 4)
+    g-four: 4;      // ss04: g only
+    g-five: 5;      // ss05: g only
+  }
+}
+
+// --- Global settings ---------------------------------------------------------
+html {
+  font-kerning: normal;
+  font-synthesis: none;   // never fake bold or small caps (italics have no small caps)
+}
+
+.content {
+  hyphens: auto;
+  font-variant-numeric: oldstyle-nums;   // figures in running prose
+}
+.content code,
+.content pre {
+  hyphens: manual;
+}
+
+// --- Figures by context ------------------------------------------------------
+// .content sets old-style figures, so other contexts switch back explicitly.
+// Tables: Benedikt's default figures are already lining + tabular.
+.content table {
+  font-variant-numeric: normal;
+}
+// Headings, titles and bold (e.g. answers): lining proportional.
+.page-title,
+.post-title,
+.content h1, .content h2, .content h3,
+.content h4, .content h5, .content h6,
+.content strong,
+.content b {
+  font-variant-numeric: proportional-nums;
+}
+
+// --- Small caps (upright contexts only) -----------------------------------------
+// Acronyms and Roman numerals in prose. Benedikt's small caps stand only ~5%
+// taller than its lowercase (about 72% of cap height), which reads as smaller
+// than the surrounding text, so they are set 10% larger (about 80% of cap
+// height). line-height: 1 keeps the larger letters from opening up the line.
+abbr[title],
+.sc {
+  font-variant-caps: all-small-caps;
+  font-size: 1.1em;
+  line-height: 1;
+  letter-spacing: .04em;
+}
+abbr[title] {
+  text-decoration: none;
+  cursor: help;
+  font-weight: inherit;   // the theme sets abbr { font-weight: bold }
+}
+#breadcrumbs,
+.post-date,
+.sidebar-nav,
+.pagination,
+footer[role="contentinfo"] {
+  font-variant-caps: all-small-caps;   // also turns digits into small-cap figures
+  letter-spacing: .06em;
+}
+// Labels, e.g. **Note**{:.label} or <span class="label">Figure 1</span>.
+// (Roman numerals use <span class="sc">XVI</span>, styled with abbr above.)
+.label {
+  font-variant-caps: all-small-caps;
+  letter-spacing: .05em;
+}
+// Captions: separate the small-caps label from the description with a period
+// and a little extra space: "FIGURE 1.  Lattice paths…"
+.figcaption .label::after {
+  content: ".";
+}
+.figcaption .label {
+  margin-right: .25em;
+}
+// Opening sentence in small caps. Mark it explicitly in Markdown:
+//   <span class="lead-in">First sentence.</span> Rest of the paragraph…
+// (A whole sentence rather than ::first-line, so the small caps never stop
+// in the middle of a word at a line break.)
+.lead-in {
+  font-variant-caps: small-caps;
+  letter-spacing: .03em;
+}
+
+// --- Display: titles ----------------------------------------------------------
+.page-title,
+.post-title,
+.sidebar-title .h1 {
+  font-variant-alternates: styleset(g-four);
+  font-variant-ligatures: common-ligatures discretionary-ligatures contextual;
+}
+
+// --- Problem statements ---------------------------------------------------------
+.content blockquote.lead {
+  font-size: .95em;
+  font-style: normal;
+}
+
+// --- Links -------------------------------------------------------------------
+@supports ((text-decoration-thickness: initial) and (text-underline-offset: initial)) {
+  .content a:not(.btn):not(.no-hover) {
+    text-decoration-thickness: .06em;
+    text-underline-offset: .18em;
+    text-decoration-skip-ink: auto;
+  }
+}
+// Cross-references between posts (Markdown links with {:.heading.flip-title})
+// read like book cross-references: italic, body weight.
+.content p a.heading.flip-title,
+.content li a.heading.flip-title {
+  font-style: italic;
+  font-weight: inherit;
+}
+// External-link mark: a typographic arrow instead of the theme's icon glyph.
+// Benedikt has no arrows, so the system font supplies it.
+@media screen {
+  a.external,
+  a[href*="://"]:not(.no-mark-external):not(.no-mark),
+  a.no-push-state:not(.no-mark-external):not(.no-mark) {
+    &::after {
+      content: "\2009\2197";
+      font-family: Benedikt, system-ui, sans-serif !important;
+    }
+  }
+}
+
+// --- Maths (KaTeX) -------------------------------------------------------------
+// .content raises specificity above KaTeX's own stylesheet, which loads later.
+.content .katex {
+  font-size: 1.07em;              // match Benedikt's x-height (KaTeX default 1.21em)
+  font-variant-numeric: normal;   // never old-style figures inside formulas
+}
+.content .katex .text,
+.content .katex .textrm {
+  font-family: Benedikt, KaTeX_Main, serif;
+}
+
+// --- Footnotes -----------------------------------------------------------------
+// Kramdown footnote references: real superscript figures (Benedikt has ¹ ² ³;
+// the browser simulates the rest).
+sup:has(> a.footnote) {
+  font-size: inherit;
+  vertical-align: baseline;
+  font-variant-position: super;
+}
+
+// --- Title animation crossfade ---------------------------------------------------
+// _includes/my-scripts.html splits the theme's stand-in title into two stacked
+// copies: .flip-from (styled like the clicked link) and .flip-to (title style).
+.animation-main .page-title[data-split] {
+  display: grid;
+}
+.animation-main .page-title[data-split] > span {
+  grid-area: 1 / 1;
+}
+.animation-main .flip-from {
+  animation: benedikt-flip-out 500ms ease forwards;
+}
+.animation-main .flip-to {
+  animation: benedikt-flip-in 500ms ease forwards;
+}
+@keyframes benedikt-flip-out {
+  0%, 30%   { opacity: 1; }
+  70%, 100% { opacity: 0; }
+}
+@keyframes benedikt-flip-in {
+  0%, 30%   { opacity: 0; }
+  70%, 100% { opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .animation-main .flip-from { display: none; }
+  .animation-main .flip-to   { animation: none; }
+}
