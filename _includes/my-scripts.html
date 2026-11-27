@@ -84,7 +84,7 @@
 <script>
     (function () {
         var fromStyle = null;
-        // Capture phase, so this runs before the theme builds its stand-in title.
+        /* Capture phase, so this runs before the theme builds its stand-in title. */
         document.addEventListener('hy-push-state-start', function (e) {
             var a = e.detail && e.detail.anchor;
             if (!a) { fromStyle = null; return; }
@@ -97,8 +97,10 @@
                 textTransform: cs.textTransform
             };
         }, true);
-        // The stand-in is inserted and measured synchronously by the theme; this
-        // observer runs afterwards, so the theme's geometry is unaffected.
+        /* The stand-in is inserted and measured synchronously by the theme; this
+           observer runs afterwards, so the theme's geometry is unaffected.
+           Block comments only: production builds compress the HTML onto one line,
+           where a // comment would swallow the rest of the script. */
         new MutationObserver(function () {
             var t = document.querySelector('.animation-main .page-title:not([data-split])');
             if (!t || !fromStyle) return;
