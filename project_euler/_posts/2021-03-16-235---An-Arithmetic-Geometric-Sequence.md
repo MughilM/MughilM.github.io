@@ -87,7 +87,7 @@ $$
 ## Solving the equation
 How do we solve this equation? The powers on $r$ are extremely large, and because that, it's possible that $h(r)$ blows up very quickly to the exponent. There are many numerical methods out there to solve high degree polynomials, but we must careful not to introduce too many floating point errors, as our desired solution must be correct to 12 decimal places.
 
-We can utilize **Newton's Method**, which utilizes the derivative, to solve this. This method is used to numerically find the zeroes of a function $f(x)$. Assuming that $f$ is differentiable, and starting with an initial guess of $x_0$, then the next guess $x_{i+1}$ is
+We can utilize **Newton's Method**, which utilizes the derivative, to solve this. Assuming that $f$ is differentiable, and starting with an initial guess of $x_0$, then the next guess $x_{i+1}$ is
 
 $$
 x_{i+1} = x_i - \frac{f(x_i)}{f'(x_i)}
@@ -111,7 +111,7 @@ $$
 \end{aligned}
 $$
 ### Determining an initial guess
-Even though Newton's Method is powerful, a "wrong" initial guess can lead to unstable results and not converge to the answer we want. Thus, it would be very helpful if our initial guess was still somewhat close to a 0. For our function $f$, it is undefined at $r=1$, and $f(2) >> 6\times 10^{11}$. Please note that $f$ is also exhibits extreme exponential behaviour. This means that our answer is actually very close to 1, and so let's set our initial guess at $r=1.01$.
+Even though Newton's Method is powerful, a "wrong" initial guess can lead to unstable results and not converge to the answer we want. Thus, it would be helpful if our initial guess was somewhat close to a 0. For our function $f$, it is undefined at $r=1$, and $f(2) >> 6\times 10^{11}$. Please note that $f$ is also exhibits extreme exponential behaviour. This means that our answer is actually very close to 1, and so let's set our initial guess at $r=1.01$.
 ## Solution
 With the function definitions we have, it is fairly straightforward to implement Newton's Method in code. We create separate methods for $f$, $g$, $f'$, and $g'$ to improve readability. Since we need to be correct to at least 12 decimal places, we run the loop until $\left| f(r_{i+1}) - f(r_i)\right| < 10^{-12}$.
 
@@ -144,5 +144,4 @@ Running this short loop we have
 ```
 
 Therefore, the value of $r$ which solves the problem is **1.002322108633**.
-
 

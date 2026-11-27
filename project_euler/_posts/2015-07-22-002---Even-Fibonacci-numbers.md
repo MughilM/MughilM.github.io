@@ -13,7 +13,7 @@ tags: [05_diff, fibonacci, analytical solution, brute force]
 {:.lead}
 * * *
 
-We can go through the Fibonacci numbers, generating and checking them as we go.
+We can go through the Fibonacci numbers, generating and checking them as we go. At any time, we only need the two most recent Fibonacci numbers, and we use the `temp` variable to replace the older number.
 ```python
 # file: "problem002.py"
 a = 1
@@ -33,17 +33,21 @@ Running results in the following output:
 0.00011090000000002487 seconds.
 ```
 ## Bonus
-However, we can also solve this analytically. If we assume $F_1=F_2=1$, then it turns out **every 3rd Fibonacci number is even**. This is due to:
+However, we can also solve this analytically. If we assume $F_1=F_2=1$, then it turns out **every 3rd Fibonacci number is even**. This is because:
 * The sequence starts with 2 odd numbers
+
 * An odd plus an odd gives an even
+
 * An even plus odd gives an odd.
-Thus, we **need to add every 3rd Fibonacci number**. Recall that there is also a closed-form formula utilizing the golden ratio:
+
+
+Thus, we **need to add every 3rd Fibonacci number**. Recall the following closed-form formula utilizing the golden ratio:
 
 $$
 F_n=\frac{\Phi^n-(1-\Phi)^n}{\sqrt{5}}
 $$
 
-We need to find the index of the largest Fibonacci number less than 4 million. From the [Wikipedia article](https://en.wikipedia.org/wiki/Fibonacci_number#Computation_by_rounding), the formula to find the closest index (rounded down) of a Fibonacci number $F$ is
+We need to find the index of the *largest* Fibonacci number less than 4 million. From the [Wikipedia article](https://en.wikipedia.org/wiki/Fibonacci_number#Computation_by_rounding), the formula to find the closest index (rounded down) of a Fibonacci number $F$ is
 
 $$
 n(F)=\lfloor \log_\Phi\left(F\sqrt{5}+\frac{1}{2}\right)\rfloor

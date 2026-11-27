@@ -7,18 +7,17 @@ tags: [05_diff]
 ---
 > The sum of the squares of the first ten natural numbers is,
 >
-> $$ 
+> $$
 1^2 + 2^2 + \cdots + 10^2 = 385 $$
 >
 > The square of the sum of the first ten natural numbers is,
-> 
-> $$ 
-(1 + 2 + \cdots + 10)^2 = 55^2 = 3025 $$
-> 
+> $$
+> (1 + 2 + \cdots + 10)^2 = 55^2 = 3025 $$
+
 > Hence the difference between the sum of the squares of the first ten natural numbers and the square of the sum is 3025 - 385 = **2640**.
->
-> Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.
-{:.lead}
+> 
+>Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.
+> {:.lead}
 * * *
 
 Just directly loop until 100. No special packages are necassary, and we can use list comprehension to make the code extra short.
@@ -37,7 +36,7 @@ Running gives,
 5.570007488131523e-05 seconds.
 ```
 ## Bonus
-We can also do this analytically. The expression we are asked to solve is
+We can do this analytically. The expression we are asked to solve is
 
 $$
 S = \left( \sum_{i=1}^{100} i \right)^2 - \sum_{i=1}^{100} i^2

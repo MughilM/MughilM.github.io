@@ -17,20 +17,23 @@ tags: [70_diff]
 
 * * *
 
-The Ackermann function is notorious for being extremely fast growing. The first 4 terms of the sum ($A(0, 0)$ to $A(3, 3)$) are 1, 3, 7, and 61. However, $A(4, 4) = 2^{2^{2^{65536}}} - 3$, an absolutely monstrous number that is practically impossible to write down. It is completely infeasible to even attempt to calculate this number. However, because we need $\mod 14^8$, there is some hope. We will take this problem step-by-step, and build up to a solution that is manageable, and even doable by hand. The crux of the problem involves reducing the massive power of two in the values for $n\geq 4$.
+The Ackermann function is notorious for being extremely fast growing. The first 4 terms of the sum ($A(0, 0)$ to $A(3, 3)$) are 1, 3, 7, and 61. However, $A(4, 4) = 2^{2^{2^{65536}}} - 3$, is an monstrous number that is practically impossible to write down. It is completely infeasible to attempt to calculate this number. 
+
+However, because we need $\mod 14^8$, there is some hope. We will take this problem step-by-step, and build up to a solution that is manageable, and even doable by hand. The crux of the problem involves reducing the massive power of two in the values for $n\geq 4$.
+
 ## Background
 ### Tetration
-We will start with $A(4, 4)$. The Wikipedia page for the [Ackermann function](https://en.wikipedia.org/wiki/Ackermann_function#Table_of_values) lists $A(4, 4) = 2 \uparrow\uparrow 7 - 3$. The double up-arrow notation is known as **Knuth arrow notation**, and in this case, it is **tetration.** Just like repeated addition is multiplication, and repeated multiplication is exponentiation, repeated exponentiation is tetration. We essentially create a "power-tower" of sorts, and $a\uparrow\uparrow b$ means to create a power-tower of $a$'s repeated $b$ times. When evaluating a power-tower directly, we always start from the top and work our down. For example, $2\uparrow\uparrow 4 = 2^{2^{2^2}} = 2^{2^4} = 2^{16} = 65536$. Even with relatively small values $a$ and $b$ can create absolutely massive numbers. 
+We will start with $A(4, 4)$. The Wikipedia page for the [Ackermann function](https://en.wikipedia.org/wiki/Ackermann_function#Table_of_values) lists $A(4, 4) = 2 \uparrow\uparrow 7 - 3$. The double up-arrow notation is known as **Knuth arrow notation**, and in this case, it is **tetration.** Tetration is analagous to repeated exponentiation, just as multiplicaiton is analagous to repeated addition. We essentially create a "power-tower", and $a\uparrow\uparrow b$ means to create a power-tower of $a$'s repeated $b$ times. When evaluating a power-tower, we start from the top and work our way down. For example, $2\uparrow\uparrow 4 = 2^{2^{2^2}} = 2^{2^4} = 2^{16} = 65536$. Even with relatively small values $a$ and $b$ can create absolutely massive numbers. 
 
-Looking ahead, if you add an additional arrow to the notation, it extends to pentation, hexation, etc. It represents how many times to repeat the lower-order exponentiation. For example, $2\uparrow\uparrow\uparrow 3 = 2\uparrow\uparrow (2\uparrow\uparrow 2)$.  If $A(4, 4)$ is massive, then $A(5, 5)$ and $A(6, 6)$ are mind-bogglingly large, because those values grow according to pentation and hexation. We will come back to how we calculate this later.
+Ff you add an additional arrow to the notation, it extends to pentation, hexation, etc. It represents how many times to repeat the lower-order exponentiation. For example, $2\uparrow\uparrow\uparrow 3 = 2\uparrow\uparrow (2\uparrow\uparrow 2)$.  If $A(4, 4)$ is massive, then $A(5, 5)$ and $A(6, 6)$ are mind-bogglingly large, because those values grow according to pentation and hexation. We will come back to how we calculate this later.
 
 ### Carmichael function
-Switching gears to something seemingly unrelated, let's talk about the [Carmichael function](https://en.wikipedia.org/wiki/Carmichael_function). We have witnessed the Euler totient function $\phi(n)$ (the number of numbers less than $n$ that are coprime to $n$) in past problems, and the Carmichael function $\lambda(n)$ is very closely related. Put simply, it is the smallest positive integer $m$ such that 
+Switching gears to something unrelated, let's talk about the [Carmichael function](https://en.wikipedia.org/wiki/Carmichael_function). We have witnessed the Euler totient function $\phi(n)$ (the number of numbers less than $n$ that are coprime to $n$) in past problems, and the Carmichael function $\lambda(n)$ is very closely related. Put simply, it is the smallest positive integer $m$ such that 
 
 $$
 a^m \equiv 1 \mod n
 $$
-is true for all $a$ coprime to $n$. Due to the modulus, it is enough to only check $a < n$. For example, $\lambda(8) = 2$, because all integers that are coprime to 8 (the odd numbers), are $1\mod 8$ when squared i.e. $1^2\equiv 3^2\equiv 5^2\equiv 7^2\equiv 1\mod 8$ (try it out!). An important fact is that  $\mathbf{\lambda(n)}$ **divides** $\mathbf{\phi(n)}$. Additionally, the Carmichael function can also be defined recursively using the totient function.
+is true for all $a$ coprime to $n$. Due to the modulus, it is enough to only check $a < n$. For example, $\lambda(8) = 2$, because all integers that are coprime to 8 (the odd numbers), are $1\mod 8$ when squared i.e. $1^2\equiv 3^2\equiv 5^2\equiv 7^2\equiv 1\mod 8$. An important fact is that  $\mathbf{\lambda(n)}$ **divides** $\mathbf{\phi(n)}$. Additionally, the Carmichael function can also be defined recursively using the totient function.
 
 $$
 \lambda(n) = 
@@ -42,7 +45,7 @@ $$
     LCM\big( \lambda(n_1), \lambda(n_2), \dots, \lambda(n_k) \big) &\text{if }n = n_1n_2\dots n_k\text{ where } n_1, n_2, \dots, n_k\text{ are powers of distinct primes.}
 \end{cases}
 $$
-This means we can use our existing solutions to calculate this function. Additionally, if we know the prime factorization of $n$, it is fairly easy to calculate $\lambda(n)$.
+This means we can use our existing solutions to calculate this function. Additionally, if we know the prime factorization of $n$, it is easy to calculate $\lambda(n)$.
 
 ### Exponential Cycle
 This is the most important fact and will allow us to solve this problem relatively easily. Let's say we are calculating $a^k\mod n$ for higher and higher values of $k$. At some point, the **sequence of results will start cycling.** In particular, the cycle length is related to $\lambda(n)$. If we have the prime factorization of $n=p_1^{r_1}p_2^{r_2}\dots p_k^{r_k}$, then for all $r\geq max(r_i)$,
@@ -60,17 +63,18 @@ $$
     x &\equiv a_2\mod n_2 \\
 \end{cases}
 $$
-where $n_1$ and $n_2$ are all coprime. To actually find $x$, we employ [Bézout's identity](https://en.wikipedia.org/wiki/B%C3%A9zout%27s_identity), and find two integers $m_1$ and $m_2$ such that $m_1n_1+m_2n_2=1$. Then, a solution to the system is $x=a_1m_2n_2+a_2m_1n_1$. However, this will not be the smallest positive solution in most cases, and so we would need to add or subtract multiples of $n$ to get an equivalent answer.
+where $n_1$ and $n_2$ are coprime. To find $x$, we employ [Bézout's identity](https://en.wikipedia.org/wiki/B%C3%A9zout%27s_identity), and find two integers $m_1$ and $m_2$ such that $m_1n_1+m_2n_2=1$. Then, a solution to the system is $x=a_1m_2n_2+a_2m_1n_1$. However, this will not be the smallest positive solution in most cases, and so we would need to add or subtract multiples of $n$ to get an equivalent answer.
 #### Finding $m_1$ and $m_2$
-To find both of these coefficients, we use the [extended Euclidean algorithm](https://en.wikipedia.org/wiki/Extended_Euclidean_algorithm). The basic algorithm simply computes $gcd(n_1, n_2)$, but with the extended version, we find the coefficients such that $m_1n_1+m_2n_2=gcd(n_1, n_2)$. However, because $n_1$ and $n_2$ are coprime, their GCD is 1. In each step of the basic algorithm, the larger number is repeatedly replaced by the remainder when the larger is divided by the smaller, until one of the numbers is 0. The answer is the other nonzero number. The extended algorithm adds two extra parameters to keep track of, based on the highest multiple. Please refer to the Wikipedia page as it has a very clear worked out example. 
+To find both coefficients, we use the [extended Euclidean algorithm](https://en.wikipedia.org/wiki/Extended_Euclidean_algorithm). The algorithm computes $gcd(n_1, n_2)$, but with the extended version, we find coefficients such that $m_1n_1+m_2n_2=gcd(n_1, n_2)$. Because $n_1$ and $n_2$ are coprime, their GCD is 1. In each step of the basic algorithm, the larger number is repeatedly replaced by the remainder when the larger is divided by the smaller, until one of the numbers is 0. At that point, the nonzero number is the answer. The extended algorithm adds two extra parameters to keep track of, based on the highest multiple. Please refer to the Wikipedia page as it has a very clear worked out example. 
 
 In our case, we will ensure that $n_1>n_2$ to ensure computations are easier to navigate.
 ## Solution
-You might have noticed that many of the background sections mainly talk about computing basic exponentiation rather than tetration. However, the $2\uparrow\uparrow 7$ tetration is essentially exponentiation $2^C$, but $C$ is an absolutely monstrous number. Using the properties of the Carmichael theorem and its exponential cycle fact, we will repeatedly reduce $C$ to a value which can be easily stored, and then we will use the CRT to calculate the actual value.
+You might have noticed that many of the background sections mainly talk about computing basic exponentiation rather than tetration. However, the $2\uparrow\uparrow 7$ tetration is exponentiation $2^C$, but $C$ is a huge number. Using the properties of the Carmichael theorem and its exponential cycle fact, we will repeatedly reduce $C$ to a value which can be easily stored, and then we will use the CRT to calculate the actual value.
 
-Stating again, we have $a^r \equiv a^{\lambda(n) + r}\mod n$ where $r\geq \log_2(n)$.  As a direct example, $\lambda(100)=40$, and $\log_2(100) = 6.64$, so we can say that $2^7\mod 100 \equiv 2^{47}\mod 100 = 28$. Note that $a$ can be any value. However, **we can also work in the other direction.** If we want to know $2^{47}\mod 100$ we can subtract 40 off the exponent. **If we want to make $r$ as small as possible, we can take the modulus of $\lambda(n)$ itself. This leads to $r<\lambda(n)$ which can drastically make it easier to calculate.**
+Stating again, we have $a^r \equiv a^{\lambda(n) + r}\mod n$ where $r\geq \log_2(n)$.  As a direct example, $\lambda(100)=40$, and $\log_2(100) = 6.64$, so we can say that $2^7\mod 100 \equiv 2^{47}\mod 100 = 28$. 
+
+Note that $a$ can be any value. However, _we can also work in the other direction_. If we want to know $2^{47}\mod 100$ we can subtract 40 off the exponent. **_If we want to make $r$ as small as possible, we can take the modulus of $\lambda(n)$ itself. This leads to $r<\lambda(n)$ which can drastically make it easier to calculate._**
 For example, let's say $r$ is incredibly big $\rightarrow 2^{4453}$. This number is very difficult to calculate on its own. However, $4453\equiv 13\mod 40$. Therefore,
-
 $$
 \begin{aligned}
 2^{4453}\mod 100 &\equiv 2^{4453\mod\lambda(100)}\mod 100
@@ -83,7 +87,7 @@ $$
 
 At no point did I need to know $2^{4453}$ actually evaluates to. This will be the crux of how we can solve this problem without knowing what any of the extremely large powers evaluate to.
 ### Expansion to Tetration
-How do we expand the above example to tetration? With tetration, the only difference is that instead of $4453$, we have a power tower. However, we can use the same mechanics, propagating smaller and smaller mods up the tower, and when we reach a point that is calculable by hand, we can propagate back downwards again. Additionally, $\lambda(\lambda(\dots(n)))$ will eventually reach 1. The only thing we need to keep in mind is that the powers need to be larger than $\log_2(m)$, where $m$ are the successive modulus on up. Here's an example with the tetration $2\uparrow\uparrow 6 = 2^{2^{2^{2^{2^2}}}}$ and $n=300$. The smallest tetration value which is "normal" is $2\uparrow\uparrow 4 = 65536$. This is where we'll stop. Going up through the power tower, we have,
+How do we expand the above example to tetration? With tetration, the difference is that instead of $4453$, we have a power tower. However, we can use the same mechanics, propagating smaller and smaller mods up the tower, and when we reach a point that is calculable by hand, we can propagate back downwards again. Additionally, $\lambda(\lambda(\dots(n)))$ will eventually reach 1. The only thing we need to keep in mind is that the powers need to be larger than $\log_2(m)$, where $m$ are the successive modulus on up. Here's an example with the tetration $2\uparrow\uparrow 6 = 2^{2^{2^{2^{2^2}}}}$ and $n=300$. The smallest tetration value which is "normal" is $2\uparrow\uparrow 4 = 65536$. This is where we'll stop. Going up through the power tower, we have,
 
 $$
 \begin{aligned}
@@ -114,12 +118,12 @@ $$
 \end{aligned}
 $$
 
-This is apparent in the 3rd step of evaluating $2\uparrow\uparrow 5$. Our previous answer was $0$, but we needed a minimum of 4 in the exponent in order to use the exponential cycle. The smallest integer greater than 0 that is equivalent to $0\mod 4$ (this 4 comes from $2\uparrow\uparrow 4\mod 4$) is 4 itself. The next evaluation doesn't need this check, since $16>8$. And that is it! We evaluated a monstrous number modulus another.
+This is apparent in the 3rd step of evaluating $2\uparrow\uparrow 5$. Our previous answer was $0$, but we needed a minimum exponent of 4 to make use of the cycle. The smallest integer greater than 0 that is equivalent to $0\mod 4$ (this 4 comes from $2\uparrow\uparrow 4\mod 4$) is 4 itself. The next evaluation doesn't need this check, since $16>8$.
 
 ### Other cases
 There are still some loose ends to tie up. In the steps shown above, the raw exponent values will be less than $\lambda(n)$. However, when dealing with large modulus (such as this problem), it is also possible that $\lambda(n)$ is itself large. Instead of $2^{16}\mod 300$ in the last step, what if we had $2^{48278}\mod14^8$? Here is where we can use the Chinese Remainder Theorem and Bezout's Identity to calculate this easily.
 ### Pentation and Hexation
-I have showed methods for tetration, but how do we handle cases with more arrows e.g. $A(5, 5) = 2\uparrow\uparrow\uparrow 7 - 3$. Pentation is really just repeated tetration. This is equal to $2\uparrow\uparrow B$, where $B$ is an absolutely humongous number. If we don't know $B$, how will our method work? Remember how we repeatedly take $\lambda(n)$ over and over again? $\lambda(n)$ will never be bigger than $n$, and so eventually, this will reduce to 1. This means after a certain exponent $k$, $2\uparrow\uparrow k\mod n$ will remain **constant**. This means both $A(5,5)=A(6,6)$ and that we can use a **much, much smaller** value for $k$ then the true values, and repeat the same process until the Carmichael numbers have reduced to 1.
+I have showed methods for tetration, but how do we handle cases with more arrows e.g. $A(5, 5) = 2\uparrow\uparrow\uparrow 7 - 3$. Pentation is repeated tetration. This is equal to $2\uparrow\uparrow B$, where $B$ is very large number. If we don't know $B$, how will our method work? Remember how we repeatedly take $\lambda(n)$ over and over again? $\lambda(n)$ will never be bigger than $n$, and so eventually, this will reduce to 1. This means after a certain exponent $k$, $2\uparrow\uparrow k\mod n$ will remain **constant**. This means both $A(5,5)=A(6,6)$ and that we can use a **much, much smaller** value for $k$ then the true values, and repeat the same process until the Carmichael numbers have reduced to 1.
 ## Solution
 Now we finally have all the pieces to solve this problem. $A(0,0)$ through $A(3,3)$ can be solved using the regular recurrence relation. After that we use the Carmichael numbers, which can be calculated from the Euler totient values using simple rules for $p^k$, where $p$ is prime. We calculate $A(4, 4)$ with this method. For both $A(5, 5)$ and $A(6, 6)$, we can simply substitute a much smaller value, since all results above a certain value will evaluate to the same result. Thus, it is enough to calculate $2\uparrow\uparrow 200 \mod 14^8$ for $A(5, 5)$ and $A(6, 6)$. The function to calculate this works nicely in recursive form. Our base cases are when either the power is 1, or $n$ is 1. Otherwise we calculate $\lambda(n)$ and its prime factorization (which can be read directly from $LCM$), and pass it in the sub-call. We also use our existing functions to calculate a "large modulus" and the prime factorization, as well as the original Ackermann recursive function definition.
 
@@ -270,4 +274,4 @@ Running this, we get
 0.0005780000064987689 seconds.
 ```
 
-Therefore, the answer to the problem with absurdly large raw numbers is **1098988351**. Notice how quick our program ran in the end!
+Therefore, the answer to the problem with absurdly large raw numbers is **1098988351**.

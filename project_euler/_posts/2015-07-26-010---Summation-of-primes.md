@@ -9,9 +9,9 @@ tags: [05_diff]
 > 
 > Find the sum of all primes below two million.
 {:.lead}
-* * * 
+* * *
 
-Since finding primes is the main crux of the problem, I will refran from using the `primesieve` package. In this case, I will use the same sieve we generated from [#7 - 10001st prime](/blog/project_euler/2015-07-26-007-10001st-prime){:.heading.flip-title}. This time we need to go until two million. To get the actual values, we will just use `enumerate`, which pairs the index with the actual value.
+Since finding primes is the main crux of the problem, I will refran from using the `primesieve` package. In this case, I will use the same sieve we generated from [#7 - 10001st prime](/blog/project_euler/2015-07-26-007-10001st-prime){:.heading.flip-title}. This time the upper limit is two million. To get the actual values, we will use `enumerate`, which pairs the index with the actual value.
 ```python
 # file: "problem010.py"
 limit = 2000000

@@ -24,7 +24,7 @@ $$
 (a + b + c)^2 = a^2 + 2ab + b^2 + 2ac + 2bc + c^2
 $$
 
-From $a + b + c = 1000$, we have $c = 1000 - a - b$. Using these facts and the Pythagorean theorem, we can simplify the above expression:
+From $a + b + c = 1000$, we have $c = 1000 - a - b$. Let's substitute both of these (along with $a^2+b^2=c^2$) into the expression above and simplify:
 
 $$
 \begin{aligned}

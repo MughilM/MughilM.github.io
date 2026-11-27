@@ -48,19 +48,19 @@ The sequence $A,B,AB,BAB,ABBAB,BABABBAB,\dots$ goes $1, 1, 2, 3, 5, 8$.
 
 ## Methodology
 
-The main question is as follows: **Do we need to compute the strings explicitly?** Is it possible to find $D_{A,B}(n)$ without computing a string that is at least $n$ digits long? Here's an observation. In the smaller example, both $A$ and $B$ were 10 digits long. When computing $D_{A,B}(35)$, the fifth string was 50 digits, so a $35^{\text{th}}$ digit existed. It was 50 digits long, because the fifth term in the Fibonacci sequence was 5, and $5\times 10 = 50$. 
+The main question is as follows: **Do we need to compute the strings explicitly?** Is it possible to find $D_{A,B}(n)$ without computing a string that is at least $n$ digits long? Here's an observation. In the smaller example, both $A$ and $B$ were 10 digits long. When computing $D_{A,B}(35)$, the fifth string was 50 digits, so a 35<sup>th</sup>  digit existed. It was 50 digits long, because the fifth term in the Fibonacci sequence was 5, and $5\times 10 = 50$. 
 
-The fifth Fibonacci word is $ABBAB$. Since we need the $35^{\text{th}}$ digit, and each string is 10 digits long, this means the **fifth entry in the fourth string** is our answer. The fourth string is $A$ and and the fifth digit is 9, our answer.
+The fifth Fibonacci word is $ABBAB$. Since we need the 35<sup>th</sup> digit, and each string is 10 digits long, this means the **fifth entry in the fourth string** is our answer. The fourth string is $A$ and and the fifth digit is 9, our answer.
 
 Ok, so it doesn't seem like we need to compute entire string explicitly. However, we can actually go one step further, and not even need the strings of $A$'s and $B$'s!
 
 ### Working backwards
 
-We can essentially use the Fibonacci formula in reverse. Again, using our example, we know we need the fifth Fibonacci word, which corresponds to the Fibonacci number of 5. However, we know $5=2+3$ (the previous two Fibonacci numbers, and hence the previous two Fibonacci words). Thus, the first 20 digits is one "word", and the next 30 digits is another "word". Because $35>20$, the $35^{\text{th}}$ digit of the 50-digit word, is actually the $15^{\text{th}}$ digit of the 30-digit word (as $50-35=15$).
+*We can essentially use the Fibonacci formula in reverse.* Again, using our example, we need the fifth Fibonacci word, which corresponds to the Fibonacci number of 5. We know $5=2+3$ (the previous two Fibonacci numbers, and hence the previous two Fibonacci words). Thus, the first 20 digits is one "word", and the next 30 digits is another "word". Because $35>20$, *the 35<sup>th</sup> digit of the 50-digit word, is actually the 15<sup>th</sup> digit of the 30-digit word* (as $50-35=15$).
 
-We just made our problem smaller. Instead of needing the $35^{\text{th}}$ digit of a $50$-digit word, we now need the $15^{\text{th}}$ of a $30$-digit word. Let's repeat one more step. $30$ corresponds to the Fibonacci number of $3$, and $3=1+2$. We have a $10$-digit word (which is $B$ in this case) attached to a $20$-digit word ($AB$). Next, $15>10$, and $20-15=5$, so we need the $5^{\text{th}}$ digit of $AB$. This is easy, as it is just the $5^{\text{th}}$ of $A$, which is $9$, our answer.
+We just made our problem smaller. Instead of needing the 35<sup>th</sup> digit of a 50-digit word, we now need the 15<sup>th</sup> of a 30-digit word. Let's repeat one more step. 30 corresponds to the Fibonacci number of 3, and $3=1+2$. We have a 10-digit word (which is $B$ in this case) attached to a 20-digit word ($AB$). Next, $15>10$, and $20-15=5$, so we need the 5<sup>th</sup> digit of $AB$. This is easy, as it is just the 5<sup>th</sup> of $A$, which is $9$, our answer.
 
-Using this "reduction" method, we were able to completely reduce the problem into finding a digit in the original strings of $A$ and $B$. It was relatively simple to convert the lengths to their corresponding Fibonacci numbers, because $A$ and $B$ were the same length, but you can make a similar argument for different length strings. Thankfully, in the larger problem, $A$ and $B$ are still the same length. 
+Using this "reduction" method, we were able to completely reduce the problem into finding a digit in $A$ and $B$. It was relatively simple to convert the lengths to their corresponding Fibonacci numbers, because $A$ and $B$ were the same length, but you can make a similar argument for different length strings. Thankfully, in the larger problem, $A$ and $B$ are still the same length. 
 
 The only necessary calculation we need is a list of all the Fibonacci numbers. However, Fibonacci numbers grow exponentially, and so we shouldn't need too many. We can use its explicit formula to find how many we need.
 

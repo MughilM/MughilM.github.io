@@ -22,15 +22,15 @@ tags: [60_diff]
 >
 > It can be shown that *all* the powers of 2 in this sequence have prime exponents and that *all* the primes appear as exponents of powers of 2, in proper order!
 >
-> If someone uses the above Fractran program to solve Project Euler Problem 7 (find the $10001^{\text{st}}$ prime), how many iterations would be needed until the program produces $2^{10001\text{st prime}}$?
+> If someone uses the above Fractran program to solve Project Euler Problem 7 (find the 10001<sup>st</sup> prime), how many iterations would be needed until the program produces $2^{10001^\text{st}}$ prime?
 
-The best way to solve a problem like this is to work it out by hand. There is a good chance that a pattern will appear. In case it isn't clear, we employ the **first fraction from the left which results in an integer.** If we start with 2, then the first fraction which multiplies cleanly is $\frac{15}{2}$, and we are left with 15. Each step results in an integer, so there will always be a fraction whose denominator cleanly divides out. Let's label the fractions $A$ to $N$, from left to right.
+The best way to solve a problem like this is to work it out by hand. There is a good chance that a pattern will appear. In case it isn't clear, we employ the **first fraction from the left which results in an integer.** e.g. starting with 2, we multiply $\frac{15}{2}$, which gives us 15. Each step results in an integer, so there will always be a fraction whose denominator cleanly divides out. Let's label the fractions $A$ to $N$, from left to right.
 
 | $A$             | $B$             | $C$             | $D$             | $E$             | $F$             | $G$             | $H$             | $I$            | $J$             | $K$             | $L$            | $M$           | $N$  |
 | --------------- | --------------- | --------------- | --------------- | --------------- | --------------- | --------------- | --------------- | -------------- | --------------- | --------------- | -------------- | ------------- | ---- |
 | $\frac{17}{91}$ | $\frac{78}{85}$ | $\frac{19}{51}$ | $\frac{23}{38}$ | $\frac{29}{33}$ | $\frac{77}{29}$ | $\frac{95}{23}$ | $\frac{77}{19}$ | $\frac{1}{17}$ | $\frac{11}{13}$ | $\frac{13}{11}$ | $\frac{15}{2}$ | $\frac{1}{7}$ | $55$ |
 
-Notice the last "fraction" is just a whole number. To make this simple, I will show the prime factorization of each number, so we can clearly see the number's factors. Exponents will denote repeated multiplications e.g. $L^7$ means multiply by $L$ 7 times in a row, and $(EF)^4$ will mean multiply by $E$, then $F$, and repeat 4 times.
+The last "fraction" is just a whole number. For brevity, I will show the prime factorization of each number, instead of the number itself. Exponents will denote repeated multiplications e.g. $L^7$ means multiply by $L$ 7 times in a row, and $(EF)^4$ will mean multiply by $E$, then $F$, and repeat 4 times.
 
 ## Example from $2^3$ to $2^5$
 
@@ -40,9 +40,9 @@ Let's walk through an example where we see the multiplications that transform 8 
 | -------------------------------- | ------------------------------------------------------------ |
 | $2^3$                            | $L^3$                                                        |
 | $3^3\times 5^3$                  | $N$                                                          |
-| $3^3\times 5^4\times 11$         | $(EF)^3$ These two fractions together cancel out the 29, as long as we have a 3 |
+| $3^3\times 5^4\times 11$         | $(EF)^3$ These two fractions together cancel out the 29, and multiplies by $\frac{7}{3}$ |
 | $11\times 7^3\times 5^4$         | $K$                                                          |
-| $13\times 7^3\times 5^4$         | $(AB)^3$ $A$ cancels a 13 and 7, and introduces 17, while B cancels out that 17 along with a 5, while also introducing a 13 again, along with 3, and 2. |
+| $13\times 7^3\times 5^4$         | $(AB)^3$ These two together transforms a 5 and 7 into a 3 and 2, for as many 7s there are (as long as there is a 13). |
 | $13\times 5\times 3^3\times 2^3$ | $J$                                                          |
 | $11\times 5\times 3^3\times 2^3$ | $(EF)^3$ Similar consequence as last time, the threes get converted into sevens |
 | $11\times 7^3\times 5\times 2^3$ | $K$                                                          |

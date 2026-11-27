@@ -11,7 +11,7 @@ tags: [05_diff, analytical solution, brute force]
 {:.lead}
 * * *
 
-Nothing fancy to do here. We can simply look through each natural number and add it to a rolling sum if it's a multiple of 3 or 5:
+Nothing fancy to do here. We can look through each natural number and add it to a rolling sum if it's a multiple of 3 or 5:
 
 ```python
 # file: "problem001.py"
@@ -26,9 +26,9 @@ Running the code results in
 233168
 0.00019780000000002573 seconds.
 ```
-Therefore, **233168** is the answer to the first problem.
+Therefore, **233168** is the answer.
 ## Bonus
-We can solve this problem completely analytically. For example, $\sum_{i=1}^{333}3i$ will get us all multiples of 3. We can do the same summation for 5. However, we have to be a bit careful. Adding these two summations will lead us to double count all numbers that are both multiples of 3 and 5 i.e. 15. Thus, we need to subtract these multiples. The full sum is therefore:
+We can solve this problem completely analytically. For example, $\sum_{i=1}^{333}3i$ will get us all multiples of 3. We can do the same summation for 5. *But we need to be careful here*. Adding these two summations will lead us to double count all numbers that are both multiples of 3 and 5 i.e. 15. Thus, we need to subtract multiples of 15. The full sum is therefore:
 
 $$
 \begin{aligned}

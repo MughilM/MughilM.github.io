@@ -5,18 +5,18 @@ date: 2015-08-07 20:44
 number: 15
 tags: [05_diff, Dynamic programming]
 ---
-> Starting in the top left corner of a 2 x 2 grid, and only being able to move to the right and down, there are exactly 6 routes to the bottom right corner.
+> Starting in the top left corner of a 2 × 2 grid, and only being able to move to the right and down, there are exactly 6 routes to the bottom right corner.
 > 
 > ![Image not found: /assets/img/project_euler/p015.png](/assets/img/project_euler/p015.png){:style="display:block; margin-left:auto; margin-right:auto"}
 > 
 > Lattice paths
 > {:.figcaption}
 > 
-> How many such routes are there through a 20 x 20 grid?
+> How many such routes are there through a 20 × 20 grid?
 {:.lead}
 * * *
 
-We can use dynamic programming here, since we have optimal substructure. The rule of the number of paths ending at a single cell does not change depending on where you are at. Meaning, **if we had the number of paths for the cell immediately to the left, and above, all we have to do is add them.**. In this way, we have turned this into a very fast solution, at the expense of storing the entire grid.
+We can use dynamic programming here, since we have optimal substructure. No matter where you are in the grid, the rule doesn't change. **If we had the number of paths for the cell immediately to the left, and above, all we have to do is add them.**. In this way, we have turned this into a very fast solution, at the expense of storing the entire grid.
 ```python
 # file: "problem015.py"
 size = 20
