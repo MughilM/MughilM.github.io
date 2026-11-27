@@ -55,3 +55,13 @@
         </script>
     {% endif %}
 {% endif %}
+
+{% if provider == "hyvor" %}
+    <div id="hyvor-talk-view">
+        <script async src="https://talk.hyvor.com/embed/embed.js" type="module"></script>
+        <hyvor-talk-comments
+                website-id="16918"
+                page-id="{{ page.url | absolute_url }}"
+        ></hyvor-talk-comments>
+    </div>
+{% endif %}

@@ -175,7 +175,7 @@ defaults:
 # Setting a disqus shortname will enable the comment section on
 # pages with `comments: true` in the front matter.
 comments:
-  provider:         giscus
+  provider:         hyvor
 
 giscus:
   repo:             MughilM/MughilM.github.io
